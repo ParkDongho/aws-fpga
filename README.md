@@ -45,7 +45,7 @@ AWS FPGA 개발 키트에 대한 지원을 받으려면 [GitHub 이슈](https://
 
 ## FPGA Developer AMI
 
-FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)는 AWS 마켓플레이스에서 소프트웨어 비용 없이 사용할 수 있으며, AWS F1에서 실행할 FPGA 설계를 개발하는 데 필요한 툴이 포함되어 있습니다. 
+[FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)는 AWS 마켓플레이스에서 소프트웨어 비용 없이 사용할 수 있으며, AWS F1에서 실행할 FPGA 설계를 개발하는 데 필요한 툴이 포함되어 있습니다. 
 
 AWS F1 인스턴스 내부에 사용되는 FPGA의 크기가 크기 때문에, 자일링스 툴은 32GiB 메모리에서 가장 잘 작동합니다. 
 z1d.xlarge/C5.4xlarge 및 z1d.2xlarge/C5.8xlarge 인스턴스 유형은 각각 30GiB+ 및 60GiB+의 메모리로 가장 빠른 실행 시간을 제공합니다. 
