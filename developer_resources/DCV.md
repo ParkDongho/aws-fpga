@@ -9,7 +9,7 @@
 
 고객은 NICE DCV와 Amazon EC2를 사용하여 EC2 인스턴스에서 그래픽 집약적인 애플리케이션을 원격으로 실행하고 그 결과를 더 간단한 클라이언트 머신으로 스트리밍할 수 있으므로 고가의 전용 워크스테이션이 필요하지 않습니다. 광범위한 HPC 워크로드의 고객들이 원격 시각화 요구사항에 NICE DCV를 사용합니다. NICE DCV 스트리밍 프로토콜은 Amazon AppStream 2.0 및 AWS RoboMaker와 같은 인기 서비스에서도 활용되고 있습니다.
 
-DCV 관리자 가이드](https://docs.aws.amazon.com/dcv/latest/adminguide/what-is-dcv.html) 및 [사용자 가이드](https://docs.aws.amazon.com/dcv/latest/userguide/getting-started.html) 는 DCV 구성 및 사용 방법에 대한 공식 리소스입니다.
+[DCV 관리자 가이드](https://docs.aws.amazon.com/dcv/latest/adminguide/what-is-dcv.html) 및 [사용자 가이드](https://docs.aws.amazon.com/dcv/latest/userguide/getting-started.html) 는 DCV 구성 및 사용 방법에 대한 공식 리소스입니다.
 
 설치 과정은 아래에 요약되어 있으므로 참고하시기 바랍니다.
 
