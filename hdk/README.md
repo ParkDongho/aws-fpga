@@ -156,7 +156,7 @@ HDK 헬로 월드 예제를 사용하여 이 단계별 가이드를 완료하는
     $ ./aws_build_dcp_from_cl.sh -clock_recipe_a A1
 ```
 
-다른 클럭 레시피도 지정할 수 있습니다. 클럭 그룹 레시피 표](./docs/clock_recipes.csv)에 대한 자세한 내용과 다른 레시피를 지정하는 방법은 다음 [README](./common/shell_v04261818/new_cl_template/build/README.md)에서 확인할 수 있습니다.
+다른 클럭 레시피도 지정할 수 있습니다. [클럭 그룹 레시피 표](./docs/clock_recipes.csv)에 대한 자세한 내용과 다른 레시피를 지정하는 방법은 다음 [README](./common/shell_v04261818/new_cl_template/build/README.md)에서 확인할 수 있습니다.
 
 **참고**: *DCP 생성은 완료하는 데 최대 몇 시간이 걸릴 수 있으므로 `aws_build_dcp_from_cl.sh`는 `nohup` 컨텍스트 내에서 주 빌드 프로세스(`vivado`)를 실행합니다: 이렇게 하면 SSH 세션이 실행 도중에 종료되더라도 빌드가 계속 실행될 수 있습니다*.
 
