@@ -36,12 +36,12 @@ AWS FPGA 개발 키트에 대한 지원을 받으려면 [GitHub 이슈](https://
 
 | Development Environment | Description | Accelerator Language | Hardware Interface | Debug Options| Typical Developer                                                     |
 | --------|---------|-------|---------|-------|-----------------------------------------------------------------------|
-| Software Defined Accelerator Development using [Vitis](Vitis/README.md)/[SDAccel](SDAccel/README.md)| Development experience leverages an optimized compiler to allow easy new accelerator development or migration of existing C/C++/openCL, Verilog/VHDL to AWS FPGA instances | C/C++/OpenCL, Verilog/VHDL (RTL) | OpenCL APIs and XRT | SW/HW Emulation, Simulation, GDB, Virtual JTAG (Chipscope) | SW or HW Developer with zero FPGA experience                          |
-| [Hardware Accelerator Development using Vivado](hdk/README.md) | Fully custom hardware development experience provides hardware developers with the tools required for developing AFIs for AWS FPGA instances  | Verilog/VHDL | [XDMA Driver](sdk/linux_kernel_drivers/xdma/README.md), [peek/poke](sdk/userspace/README.md) | Simulation, Virtual JTAG | HW Developer with advanced FPGA experience                            |
-| [IP Integrator/High Level Design(HLx) using Vivado](hdk/docs/IPI_GUI_Vivado_Setup.md) | Graphical interface development experience for integrating IP and high level synthesis development | Verilog/VHDL/C | [XDMA Driver](sdk/linux_kernel_drivers/xdma/README.md), [peek/poke](sdk/userspace/README.md) | Simulation, Virtual JTAG | HW Developer with intermediate FPGA experience                        |
- | [On-premise development for Alveo U200 using Vitis targetted for migration to F1](Vitis/docs/Alveo_to_AWS_F1_Migration.md) | Vitis flow development using on-premise U200 platform targeted for migration to F1 |  C/C++/OpenCL, Verilog/VHDL (RTL) | OpenCL APIs and XRT | SW/HW Emulation, Simulation, GDB, JTAG (Chipscope) | SW or HW Developer with zero FPGA experience and on-premise U200 card |
- | [On-premise development for Alveo U200 using F1.A.1.4 shell](hdk/docs/U200_to_F1_migration_HDK.md) | HDK flow for on-premise U200 card using F1.A.1.4 shell targetted for migration to F1 | Verilog/VHDL | XDMA driver, peek/poke | Simulation, JTAG | HW Developer with advanced FPGA experience and on-premise U200 card   |
-> For on-premise development, SDAccel/Vitis/Vivado must have the [correct license and use one of the supported tool versions](./docs/on_premise_licensing_help.md). 
+| [Vitis](Vitis/README.md)/[SDAccel](SDAccel/README.md)를 이용한 소프트웨어 정의 가속기 개발 | 개발 경험은 최적화된 컴파일러를 활용하여 새로운 가속기를 쉽게 개발하거나 기존 C/C++/openCL, Verilog/VHDL을 AWS FPGA 인스턴스로 마이그레이션할 수 있도록 지원합니다. | C/C++/OpenCL, Verilog/VHDL (RTL) | OpenCL APIs and XRT | SW/HW 에뮬레이션, 시뮬레이션, GDB, 가상 JTAG(칩스코프) | FPGA 경험이 전혀 없는 SW 또는 HW 개발자                          |
+| [비바도를 사용한 하드웨어 가속기 개발](hdk/README.md) | 완전 맞춤형 하드웨어 개발 경험은 하드웨어 개발자에게 AWS FPGA 인스턴스용 AFI를 개발하는 데 필요한 도구를 제공합니다.  | Verilog/VHDL | [XDMA Driver](sdk/linux_kernel_drivers/xdma/README.md), [peek/poke](sdk/userspace/README.md) | Simulation, Virtual JTAG | 고급 FPGA 경험이 있는 HW 개발자                            |
+| [IP Integrator/High Level Design(HLx) using Vivado](hdk/docs/IPI_GUI_Vivado_Setup.md) | IP 및 고수준 합성 개발 통합을 위한 그래픽 인터페이스 개발 경험 | Verilog/VHDL/C | [XDMA Driver](sdk/linux_kernel_drivers/xdma/README.md), [peek/poke](sdk/userspace/README.md) | Simulation, Virtual JTAG | 중급 FPGA 경험이 있는 HW 개발자                        |
+ | [On-premise development for Alveo U200 using Vitis targetted for migration to F1](Vitis/docs/Alveo_to_AWS_F1_Migration.md) | F1으로의 마이그레이션을 목표로 온프레미스 U200 플랫폼을 사용한 바이티스 플로우 개발 |  C/C++/OpenCL, Verilog/VHDL (RTL) | OpenCL APIs and XRT | SW/HW 에뮬레이션, 시뮬레이션, GDB, JTAG(칩스코프) | FPGA 경험이 없고 온프레미스 U200 카드가 없는 SW 또는 HW 개발자 |
+ | [On-premise development for Alveo U200 using F1.A.1.4 shell](hdk/docs/U200_to_F1_migration_HDK.md) | F1으로의 마이그레이션을 대상으로 하는 F1.A.1.4 셸을 사용하는 온프레미스 U200 카드용 HDK 흐름 | Verilog/VHDL | XDMA driver, peek/poke | Simulation, JTAG | 고급 FPGA 및 온프레미스 U200 카드 경험이 있는 HW 개발자   |
+> on-premise 개발의 경우, SDAccel/Vitis/Vivado는 [올바른 라이선스가 있어야 하며 지원되는 도구 버전 중 하나를 사용](./docs/on_premise_licensing_help.md)해야 합니다.
 
 ## FPGA Developer AMI
 
@@ -55,7 +55,7 @@ AWS 마켓플레이스는 여러 버전의 FPGA 개발자 AMI를 제공합니다
 
 ## Xilinx tool support
 
-| Developer Kit Version | Tool Version Supported | Compatible FPGA Developer AMI Version       |
+| 개발자 키트 버전          | 지원 도구 버전            | 호환 가능한 FPGA 개발자 AMI 버전                  |
 |-----------------------|------------------------|---------------------------------------------|
 | 1.4.23+               | 2021.2                 | v1.12.X (Xilinx Vivado/Vitis 2021.2)        |
 | 1.4.21+               | 2021.1                 | v1.11.X (Xilinx Vivado/Vitis 2021.1)        |
@@ -103,8 +103,8 @@ Amazon EC2 FPGA 인스턴스에서는 각 FPGA가 두 개의 파티션으로 나
 
 | Shell Name| Shell Version | Dev Kit Branch | Description|
 |--------|--------|---------|-------|
-| F1 XDMA Shell | F1.X.1.4 | [master](https://github.com/aws/aws-fpga/) | Provides all the [interfaces listed here](https://github.com/aws/aws-fpga/blob/master/hdk/docs/AWS_Shell_Interface_Specification.md), includes DMA | 
-| F1 Small Shell | F1.S.1.0 | [small_shell](https://github.com/aws/aws-fpga/tree/small_shell) | Provides all the [interfaces listed here](https://github.com/aws/aws-fpga/blob/small_shell/hdk/docs/AWS_Shell_Interface_Specification.md). This shell does not include DMA engine and provides significant reduction in Shell resource usage. |
+| F1 XDMA Shell | F1.X.1.4 | [master](https://github.com/aws/aws-fpga/) |. DMA를 포함하는, 여기에 나열된 모든 [인터페이스](https://github.com/aws/aws-fpga/blob/master/hdk/docs/AWS_Shell_Interface_Specification.md)를 제공합니다. | 
+| F1 Small Shell | F1.S.1.0 | [small_shell](https://github.com/aws/aws-fpga/tree/small_shell) | 여기에 나열된 모든 [인터페이스]를 제공합니다(https://github.com/aws/aws-fpga/blob/small_shell/hdk/docs/AWS_Shell_Interface_Specification.md). 이 셸에는 DMA 엔진이 포함되어 있지 않으며 셸 리소스 사용량을 크게 줄여줍니다. |
 
 자세한 내용은 [FAQ](./FAQs.md#general-aws-fpga-shell-faqs)를 확인하세요.
 
@@ -182,10 +182,10 @@ FPGA Image generation and EC2 F1 instances are supported in the us-east-1 (N. Vi
 
 | Description | Quickstart | Next Steps |
 |----|----|----|
-| Software Defined Accelerator Development using Xilinx Vitis | [Vitis hello_world Quickstart](Vitis/README.md) | [60+ Vitis examples](./Vitis/examples/), [Vitis Library Examples](./docs/examples/example_list.md) |
-| Software Defined Accelerator Development using Xilinx SDAccel | [SDAccel hello_world Quickstart](SDAccel/README.md) | [60+ SDAccel examples](./SDAccel/examples/) |
-| Custom Hardware Development(HDK) | [HDK hello_world Quickstart](hdk/README.md) | [CL to Shell and DRAM connectivity example](./hdk/cl/examples/cl_dram_dma), [Virtual Ethernet Application](./sdk/apps/virtual-ethernet) using the [Streaming Data Engine](./hdk/cl/examples/cl_sde) |
-| IP Integrator/High Level Design(HLx) | [IPI hello_world Quickstart](hdk/cl/examples/cl_hello_world_hlx/README.md) | [IPI GUI Examples](hdk/docs/IPI_GUI_Examples.md) |
+| 자일링스 Vitis를 사용한 소프트웨어 정의 가속기 개발 | [Vitis hello_world Quickstart](Vitis/README.md) | [60+ Vitis examples](./Vitis/examples/), [Vitis Library Examples](./docs/examples/example_list.md) |
+| 자일링스 SDAccel을 사용한 소프트웨어 정의 가속기 개발 | [SDAccel hello_world Quickstart](SDAccel/README.md) | [60+ SDAccel examples](./SDAccel/examples/) |
+| 맞춤형 하드웨어 개발(HDK) | [HDK hello_world Quickstart](hdk/README.md) | [CL to Shell and DRAM connectivity example](./hdk/cl/examples/cl_dram_dma), [Virtual Ethernet Application](./sdk/apps/virtual-ethernet) using the [Streaming Data Engine](./hdk/cl/examples/cl_sde) |
+| IP 통합기/하이 레벨 설계(HLx) | [IPI hello_world Quickstart](hdk/cl/examples/cl_hello_world_hlx/README.md) | [IPI GUI Examples](hdk/docs/IPI_GUI_Examples.md) |
 
 ℹ️ <b>INFO:</b> 하이레벨 합성, 바이티스 라이브러리, 앱 노트 및 워크샵을 사용한 보다 심층적인 애플리케이션과 예제는 [예제 목록](./docs/exples/example_list.md)을 참조하세요.
 
