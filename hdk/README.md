@@ -106,7 +106,7 @@ hdk_setup.sh` 소싱은 다음을 수행합니다:
 <a name="examples"></a>
 #### Review examples 
 
-The [Examples readme](./cl/examples/cl_examples_list.md) provides an overview of all examples available to developers.
+[Examples readme](./cl/exples/cl_exples_list.md)에는 개발자가 사용할 수 있는 모든 예제에 대한 개요가 나와 있습니다.
 
 <a name="endtoend"></a>
 ## How To Create an Amazon FPGA Image (AFI) From One of The CL Examples: Step-by-Step Guide
