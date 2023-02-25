@@ -30,7 +30,7 @@ XDMA 드라이버 소스 코드는 AWS FPGA HDK 및 SDK와 함께 배포됩니�
 
 [XDMA 설치 가이드](./xdma_install.md)는 XDMA 설치 컴파일, 설치 및 문제 해결 방법에 대한 자세한 지침을 제공합니다.
 
-** 참고: XDMA 사용은 필수가 아닙니다. AWS는 CPU와 FPGA 간의 직접 통신을 위해 메모리 매핑된 PCIe 주소 공간을 제공합니다. **
+**참고: XDMA 사용은 필수가 아닙니다. AWS는 CPU와 FPGA 간의 직접 통신을 위해 메모리 매핑된 PCIe 주소 공간을 제공합니다.**
 
 다양한 CPU-FPGA 통신 옵션과 사용 가능한 다양한 옵션에 대한 자세한 설명은 [프로그래머 뷰](../../../hdk/docs/Programmer_View.md)를 참조하세요.
 
@@ -134,33 +134,33 @@ XDMA 데이터 이동 명령(예: `pread()` 및 `pwrite()`)은 인스턴스 CPU 
 
 
 <a name="openclose"></a>
-## Initialization and Tear Down API
+## 초기화 및 해체 API
 
-Initialization is done using the standard file-open API:
+초기화는 표준 파일 열기 API를 사용하여 수행됩니다:
 `int open(const char *pathname, int flags);`
 
-Where file name is one of the H2C or C2H device files (e.g. `/dev/xdmaX_h2c_Y` or `/dev/xdmaX_c2h_Y`). (X is the FPGA slot, Y is the specific channel), with the only flags recommended are `O_WRONLY` or `O_RDONLY` for the corresponding H2C or C2H channel direction.  All other flags are ignored.
+여기서 파일 이름은 H2C 또는 C2H 장치 파일 중 하나입니다(예: `/dev/xdmaX_h2c_Y` 또는 `/dev/xdmaX_c2h_Y`). (X는 FPGA 슬롯, Y는 특정 채널), 해당 H2C 또는 C2H 채널 방향에 대해 `O_WRONLY` 또는 `O_RDONLY` 플래그만 권장됩니다.  다른 모든 플래그는 무시됩니다.
 
-Multiple threads or processes can open the same file, and it is the developer's responsibility to ensure coordination/serialization.
+여러 스레드 또는 프로세스가 동일한 파일을 열 수 있으며, 조정/직렬화를 보장하는 것은 개발자의 책임입니다.
 
-A corresponding `close()` is used to release the DMA channel.
+해당 `close()`는 DMA 채널을 해제하는 데 사용됩니다.
 
 <a name="write"></a>
 ## Write APIs
 
-The two standard Linux/POSIX APIs for write are listed below:
+쓰기를 위한 두 가지 표준 Linux/POSIX API는 다음과 같습니다:
 
 ***ssize_t write(int fd, void\* buf, size_t count)*** 
 
 ***ssize_t pwrite(int fd, void\* buf, size_t count, off_t offset)***   (Recommended, see [explanation](#seek))
 
-The file-descriptor (fd) must have been opened successfully before calling `write()/pwrite()`.
+`쓰기()/쓰기()`를 호출하기 전에 파일 기술자(fd)가 성공적으로 열렸어야 합니다.
 
-`buf`, the pointer to the source buffer to write to FPGA can have arbitrary size and alignment.
+FPGA에 쓰기 위한 소스 버퍼에 대한 포인터인 `buf`는 임의의 크기와 정렬을 가질 수 있습니다.
 
-The XDMA driver is responsible for mapping the `buf` memory range to list of physical addresses that the hardware DMA can use. 
+XDMA 드라이버는 `buf` 메모리 범위를 하드웨어 DMA가 사용할 수 있는 물리적 주소 목록에 매핑하는 작업을 담당합니다. 
 
-The XDMA driver takes care of pinning the user-space `buf` memory so that it cannot be swapped out during the DMA transfer.
+XDMA 드라이버는 사용자 공간 `buf` 메모리를 고정하여 DMA 전송 중에 스왑 아웃되지 않도록 처리합니다.
 
 <a name="read"></a>
 ## Read APIs 
@@ -169,88 +169,88 @@ The XDMA driver takes care of pinning the user-space `buf` memory so that it can
 
 ***ssize_t pread(int fd, void\* buf, size_t count, off_t offset)***   (Recommended, see [explaination](#seek))
 
-Both `read()` and `pread()` are blocking calls, and the call waits until data is returned.
+`read()`와 `pread()`는 모두 호출을 차단하고 있으며, 호출은 데이터가 반환될 때까지 대기합니다.
 
-Read returns the number of successful bytes, and it is the user responsibility to call `read()` with the correct offset again if the return value is not equal to count. In a case of DMA timeout (10 seconds), EIO is returned. 
+읽기는 성공한 바이트 수를 반환하며, 반환값이 카운트와 같지 않은 경우 올바른 오프셋으로 `read()`를 다시 호출하는 것은 사용자의 책임입니다. DMA 타임아웃(10초)이 발생하면 EIO가 반환됩니다. 
 
 Possible errors:<br />
 EIO - DMA timeout or transaction failure.<br />
 ENOMEM - System is out of memory.<br />
 
-**NOTE:** In case of any of the aforementioned errors, the FPGA and XDMA is left in unknown state, with Linux `dmesg` log potentially providing more insight on the error (see FAQ: How would I check if XDMA encountered errors?).
+**NOTE:** 앞서 언급한 오류 중 하나라도 발생하면 FPGA 및 XDMA는 알 수 없는 상태로 남게 되며, Linux `dmesg` 로그에서 오류에 대한 자세한 정보를 얻을 수 있습니다(FAQ: XDMA에 오류가 발생했는지 확인하려면 어떻게 해야 하나요? 참조).
 
 <a name="seek"></a>
 ## Seek API
 
-The XDMA driver implements the standard `lseek()` Linux/POSIX system call, which modifies the character device file position. The position is used in `read()`/`write()` to point the FPGA memory space. 
+XDMA 드라이버는 문자 장치 파일 위치를 수정하는 표준 `lseek()` Linux/POSIX 시스템 호출을 구현합니다. 이 위치는 `read()`/`write()`에서 FPGA 메모리 공간을 가리키는 데 사용됩니다. 
 
-**WARNING: ** Calling `lseek()` without proper locking is prone to errors, as concurrent/multi-threaded design could call `lseek()` concurrently and without an atomic follow up with `read()/write()`.
+**WARNING: ** 동시/멀티 스레드 설계에서 `lseek()`을 `read()/write()`로 원자적 후속 조치 없이 동시에 호출할 수 있으므로 적절한 잠금 없이 `lseek()`을 호출하면 오류가 발생하기 쉽습니다.
 
-The file_pos is a file attribute; therefore, it is incremented by both `write()` and `read()` operations by the number of bytes that were successfully written or read.
+file_pos는 파일 속성이므로 `write()` 및 `read()` 연산에 의해 성공적으로 쓰거나 읽은 바이트 수만큼 증가합니다.
 
-**Developers are encouraged to use `pwrite()` and `pread()`, which performs lseek and write/read in an atomic way**
+**개발자는 원자적인 방식으로 lseek 및 쓰기/읽기를 수행하는 `pwrite()` 및 `pread()`를 사용하는 것이 좋습니다.**
 
 <a name="poll"></a>
 ## Poll API
 
-The `poll()` function provides applications with a mechanism for multiplexing input over a set of file descriptors for matching user events. This is used by the XDMA driver for user generated interrupts events, and not used for data transfers.
+poll()` 함수는 일치하는 사용자 이벤트에 대해 파일 기술자 집합을 통해 입력을 다중화하는 메커니즘을 애플리케이션에 제공합니다. 이 함수는 사용자가 생성한 인터럽트 이벤트에 대해 XDMA 드라이버에서 사용되며 데이터 전송에는 사용되지 않습니다.
 
-Only the POLLIN mask is supported and is used to notify that an event has occurred.
+폴린 마스크만 지원되며 이벤트가 발생했음을 알리는 데 사용됩니다.
 
-Refer to [User-defined interrupts events README](./user_defined_interrupts_README.md) for more details.
+자세한 내용은 [사용자 정의 인터럽트 이벤트 README](./user_defined_interrupts_README.md)를 참조하세요.
 
-The application MUST issue a `pread` of the ready file descriptor to return and clear the `events_irq` variable within the XDMA driver in order to be notified of future user interrupts.  An example of using `poll` and `pread` for user defined interrupts is provided within the [test_dram_dma.c](../../../hdk/cl/examples/cl_dram_dma/software/runtime/test_dram_dma.c) `interrupt_example()`.
+애플리케이션은 향후 사용자 인터럽트에 대한 알림을 받으려면 준비된 파일 기술자의 `pread`를 실행하여 XDMA 드라이버 내에서 `events_irq` 변수를 반환하고 지워야 합니다.  사용자 정의 인터럽트에 `poll` 및 `pread`를 사용하는 예는 [test_dram_dma.c](../../../hdk/cl/examples/cl_dram_dma/software/runtime/test_dram_dma.c) `interrupt_example()` 내에 나와 있습니다.
 
 <a name="concurrency"></a>
 ## Concurrency and Multi-Threading
 
-XDMA supports concurrent multiple access from multiple processes and multiple threads within one process.  Multiple processes can call `open()/close()` to the same file descriptor.
+XDMA는 여러 프로세스에서 동시 다중 액세스와 한 프로세스 내에서 여러 스레드를 지원합니다.  여러 프로세스가 동일한 파일 기술자에 대해 `open()/close()`를 호출할 수 있습니다.
 
-It is the developer's responsibility to make sure write to same memory region from different threads/processes is coordinated and not overlapping.
+서로 다른 스레드/프로세스에서 동일한 메모리 영역에 대한 쓰기가 중복되지 않고 조정되도록 하는 것은 개발자의 책임입니다.
 
-To re-iterate, use of `pread()/pwrite()` is recommended over a sequence of `lseek()` + `read()/write()`.
+다시 말씀드리면, `lseek()` + `read()/write()` 시퀀스보다 `pread()/pwrite()`를 사용하는 것이 좋습니다.
 
 <a name="error"></a>
 ## Error Handling
 
-The driver handles some error cases and passes other errors to the user.
+드라이버는 일부 오류 사례를 처리하고 다른 오류는 사용자에게 전달합니다.
 
-XDMA is designed to attempt a graceful recovery from errors, specifically application crashes or bugs in the Custom Logic portion of the FPGA. While the design attempts to cover all known cases, there may be corner cases that are not recoverable. The XDMA driver prints errors to Linux `dmesg` service indicating an unrecoverable error  (see FAQ: How would I check if XDMA encountered errors?).
+XDMA는 오류, 특히 FPGA의 커스텀 로직 부분에서 애플리케이션 충돌 또는 버그가 발생했을 때 정상적으로 복구되도록 설계되었습니다. 이 설계는 알려진 모든 경우를 다루려고 시도하지만 복구할 수 없는 코너 케이스가 있을 수 있습니다. XDMA 드라이버는 복구할 수 없는 오류를 나타내는 오류를 Linux `dmesg` 서비스에 출력합니다(FAQ: XDMA에서 오류가 발생했는지 확인하려면 어떻게 해야 하나요? 참조).
 
 #### Error: Application Process Crash 
 
-In case of a crash in the userspace application, the operating system kernel tears down of all open file descriptors (XDMA channels) associated with the process. Release (equivalent of `close()`) is called for every open file descriptor.  In-flight DMA reads or writes are aborted and an error is reported in Linux `dmesg`. The FPGA itself and the XDMA driver may be left in an unknown state (see FAQ: How would I check if XDMA encountered errors?).
+사용자 공간 응용 프로그램에서 충돌이 발생하면 운영 체제 커널은 프로세스와 관련된 모든 열린 파일 기술자(XDMA 채널)를 분해합니다. 열려 있는 모든 파일 기술자에 대해 릴리스(`close()`와 동일)가 호출됩니다.  기내 DMA 읽기 또는 쓰기가 중단되고 Linux `dmesg`에 오류가 보고됩니다. FPGA 자체와 XDMA 드라이버는 알 수 없는 상태로 남아있을 수 있습니다(FAQ: XDMA에 오류가 발생했는지 확인하려면 어떻게 해야 하나요? 참조).
 
 #### Error: API Time-out
 
-Timeout errors can occur in few places including:
+시간 초과 오류는 다음과 같은 몇 가지 위치에서 발생할 수 있습니다:
 
-1. Application stuck on `write()/pwrite()`.
+1. `write()/pwrite()`에서 응용 프로그램이 멈췄습니다.
 
-2. A `read()` from CL portion of the FPGA that is stuck, causing the read() to block forever.
+2. FPGA의 CL 부분에서 `read()`가 멈춰서 read()가 영원히 차단되는 경우.
 
-The XDMA driver has a timeout mechanism for this case (10 seconds), automatically triggers DMA transfer abort processing, and follows the same procedure description in “Application process crash” mentioned previously.
+XDMA 드라이버는 이 경우(10초)에 대한 타임아웃 메커니즘을 가지고 있으며, DMA 전송 중단 처리를 자동으로 트리거하고 앞서 언급한 "응용 프로그램 프로세스 충돌"에서 설명한 것과 동일한 절차에 따릅니다.
 
 <a name="faqs"></a>
 # FAQ
 
-**Q: How do I get the Source code of the XDMA driver and compile it?**
+**Q: XDMA 드라이버의 소스 코드를 가져와서 컴파일하려면 어떻게 해야 하나요?**
 
-The XDMA driver is included [AWS FPGA HDK/SDK](.), and may be included pre-installed in some Amazon Linux distributions.
+XDMA 드라이버는 [AWS FPGA HDK/SDK](.)에 포함되어 있으며, 일부 Amazon Linux 배포판에는 사전 설치되어 있을 수 있습니다.
 
-Follow the [installation guide](./xdma_install.md) for more details.
+자세한 내용은 [설치 가이드](./xdma_install.md)를 참조하세요.
 
-**Q: How to discover the available FPGAs with the XDMA driver?**
+**Q: XDMA 드라이버로 사용 가능한 FPGA를 검색하는 방법은 무엇입니까?**
 
-Once the XDMA driver is running, all the available devices will be listed in /dev directory as /dev/xdmaX.
+XDMA 드라이버가 실행되면 사용 가능한 모든 장치가 /dev 디렉터리에 /dev/xdmaX로 나열됩니다.
 
     `$ ls /dev/xdma*`
     
-Each XDMA device exposes multiple channels under `/dev/xdmaX_h2c_Y` and `/dev/xdmaX_c2h_Y` and the developer can work directly with these character devices.
+각 XDMA 장치는 `/dev/xdmaX_h2c_Y` 및 `/dev/xdmaX_c2h_Y` 아래에 여러 채널을 노출하며, 개발자는 이러한 문자 장치로 직접 작업할 수 있습니다.
 
-**Q: When my `write()`/`pwrite()` call is returned, am I guaranteed that the data reached the FPGA?** 
+**Q: `write()`/`pwrite()` 호출이 반환되면 데이터가 FPGA에 도달했다는 보장이 있나요?** 
 
-No. System calls to `write()`/`pwrite()` return the number of bytes which were written or read. It is up to the caller to make the call again if the operation did not complete.
+아니요. `write()`/`pwrite()`에 대한 시스템 호출은 쓰거나 읽은 바이트 수를 반환합니다. 작업이 완료되지 않은 경우 다시 호출하는 것은 호출자의 몫입니다.
 
 **Q: XDMA는 데이터를 삭제할 수 있나요?**
 
@@ -294,10 +294,10 @@ Polled mode:
   
 처리 단계 및 스레드 컨텍스트 전환의 감소로 인해 폴링된 DMA 기술자 완료 모드는 더 작은 IO 크기(예: 1MB 미만)를 사용하는 특정 애플리케이션 사용 사례에서 인터럽트 모드에 비해 상당한 성능 이점이 있을 수 있습니다.  개발자는 인터럽트 모드와 폴링된 DMA 기술자 완성 모드를 모두 실험해 보고 애플리케이션에 가장 적합한 모드를 사용하는 것이 좋습니다.
 
-XDMA polled DMA descriptor completion mode is enabled at XDMA driver load time:
+XDMA 폴링된 DMA 디스크립터 완성 모드는 XDMA 드라이버 로드 시 활성화됩니다:
 
 ` $ insmod xdma.ko poll_mode=1`
 
-XDMA interrupt DMA descriptor completion mode is also enabled at XDMA driver load time (default):
+XDMA 인터럽트 DMA 디스크립터 완료 모드도 XDMA 드라이버 로드 시 활성화됩니다(기본값):
 
 ` $ insmod xdma.ko`
