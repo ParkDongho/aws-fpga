@@ -52,7 +52,7 @@
 
 <a name="iss"></a>
 #### AWS Account, F1/EC2 Instances, On-Premises, AWS IAM Permissions, AWS CLI and S3 Setup (One-time Setup)
-* AWS 계정 설정](https://aws.amazon.com/free/)
+* [AWS 계정 설정](https://aws.amazon.com/free/)
 * 비바도와 함께 사전 설치되어 있는 [FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)와 필요한 라이선스를 사용하여 인스턴스를 실행합니다.  AWS FPGA 인스턴스 내부에 사용되는 FPGA의 크기가 크기 때문에 구현 도구에는 32GiB 메모리가 필요합니다(예: c4.4xlarge, m4.2xlarge, r4.xlarge, t2.2xlarge). c4.4xlarge와 c4.8xlarge는 각각 30, 60GiB의 메모리로 가장 빠른 실행 시간을 제공합니다. 비용을 절감하려는 개발자는 t2.2xlarge와 같은 저비용 인스턴스에서 코딩을 시작하고 시뮬레이션을 실행한 다음 앞서 언급한 대용량 인스턴스로 이동하여 가속 코드 합성을 실행할 수 있습니다.  온프레미스 지침](../docs/on_premise_licensing_help.md)에 따라 Xilinx에서 라이선스를 구매하고 설치합니다.
 * 호환성 표는 개발자 키트 버전과 [FPGA Developer AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ) 버전의 매핑에 대해 설명합니다:  
 
@@ -75,7 +75,7 @@
 
 * FPGA 이미지 생성을 위한 AWS IAM 권한 설정(CreateFpgaImage 및 DescribeFpgaImages). [EC2 API 권한은 더 자세히 설명되어 있습니다](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ec2-api-permissions.html)를 참조하십시오.  이 빠른 시작을 진행하기 전에 AWS IAM 권한의 유효성을 검사하는 것이 좋습니다.  DescribeFpgaImages API](docs/describe_fpga_images.md)를 호출하여 IAM 권한이 올바른지 확인할 수 있습니다.
 
-* AWS CLI 및 S3 버킷 설정](../SDAccel/docs/Setup_AWS_CLI_and_S3_Bucket.md)을 설치하여 AFI 생성을 활성화합니다.
+* [AWS CLI 및 S3 버킷 설정](../SDAccel/docs/Setup_AWS_CLI_and_S3_Bucket.md)을 설치하여 AFI 생성을 활성화합니다.
   * AWS CLI 설치는 [AWS CLI 설치 가이드](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)를 참고하시기 바랍니다.
     ```
     $ aws configure     # 를 사용하여 자격 증명(console.aws.amazon.com 페이지에 있음)과 기본 리전을 설정합니다.
@@ -229,10 +229,10 @@ AFI 생성을 시작합니다.
 ```
 
 이 명령의 출력에는 AFI를 참조하는 두 개의 식별자가 포함됩니다:
-- FPGA 이미지 식별자** 또는 **AFI ID**: 이 식별자는 AWS EC2 CLI 명령과 AWS SDK API를 통해 AFI를 관리하는 데 사용되는 기본 ID입니다.
+- **FPGA 이미지 식별자** 또는 **AFI ID**: 이 식별자는 AWS EC2 CLI 명령과 AWS SDK API를 통해 AFI를 관리하는 데 사용되는 기본 ID입니다.
     이 ID는 지역별로 다르며, 즉 AFI가 여러 지역에 걸쳐 복사되는 경우 각 지역마다 다른 고유 AFI ID를 갖게 됩니다.
     예시적인 AFI ID는 **`afi-06d0ffc989feeea2a`**입니다.
-- 글로럴 FPGA 이미지 식별자** 또는 **AGFI ID**: F1 인스턴스 내에서 AFI를 참조하는 데 사용되는 글로벌 ID입니다.
+- **글로럴 FPGA 이미지 식별자** 또는 **AGFI ID**: F1 인스턴스 내에서 AFI를 참조하는 데 사용되는 글로벌 ID입니다.
     예를 들어, FPGA 슬롯에서 AFI를 로드하거나 지우려면 AGFI ID를 사용합니다.
     AGFI ID는 (설계상) 전역이므로 AFI/AMI 조합을 여러 리전으로 복사할 수 있으며, 추가 설정 없이도 작동합니다.
     예시적인 AGFI ID는 **`agfi-0f0e045f919413242`**입니다.
@@ -270,7 +270,7 @@ AFI 생성이 완료되면 AWS는 개발자가 제공한 버킷 위치(```s3://<
 AFI가 성공적으로 생성되었는지 확인할 때까지 기다리세요.
 
 **참고**: *AFI가 생성된 지역과 다른 지역에서 AFI를 로드하려고 하면 `Invalid AFI ID` 오류가 발생합니다.  AFI는 리전으로 복사해야 합니다*.
-copy-fpga-image](./docs/copy_fpga_image.md) API를 사용하면 AFI를 다른 리전으로 복사하여 시간이 많이 걸리는 `create-fpga-image` 프로세스를 피할 수 있습니다. 또한 복사하면 소스 글로벌 AFI ID를 보존하고 인스턴스 코드나 스크립트의 지역별 변경 사항을 최소화할 수 있습니다.
+[copy-fpga-image](./docs/copy_fpga_image.md) API를 사용하면 AFI를 다른 리전으로 복사하여 시간이 많이 걸리는 `create-fpga-image` 프로세스를 피할 수 있습니다. 또한 복사하면 소스 글로벌 AFI ID를 보존하고 인스턴스 코드나 스크립트의 지역별 변경 사항을 최소화할 수 있습니다.
 
 #### Step by step guide how to load and test a registered AFI from within an F1 instance
 
@@ -356,7 +356,7 @@ Vivado XSIM 시뮬레이터를 사용하거나 자체 시뮬레이터(예: Synop
 ## Start your own Custom Logic design (RTL flow, using Verilog or VHDL)
 
 * 새 설계를 시작하기 전에 AWS 셸(SH)에서 커스텀 로직(CL)으로의 [인터페이스](./docs/AWS_Shell_Interface_Specification.md)의 사양을 검토하세요.
-* 디버그 흐름](docs/Virtual_JTAG_XVC.md)을 시도하고 [셸 타임아웃 동작](docs/HOWTO_detect_shell_timeout.md)을 이해합니다.
+* [디버그 흐름](docs/Virtual_JTAG_XVC.md)을 시도하고 [셸 타임아웃 동작](docs/HOWTO_detect_shell_timeout.md)을 이해합니다.
 * 준비가 되면 예제를 [나만의 CL 디자인 시작하기](./cl/developer_designs/Starting_Your_Own_CL.md)에 복사하고 간단한 수정을 통해 개발 요구 사항에 맞게 하드웨어 개발자 키트를 커스터마이징하는 데 익숙해지도록 합니다.
 
 
