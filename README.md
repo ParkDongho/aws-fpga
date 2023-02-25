@@ -5,9 +5,9 @@
     - [개발 흐름](#development-flow)
     - [개발 환경](#development-environments)
     - [FPGA 개발자 AMI](#fpga-developer-ami)
-- [FPGA 하드웨어 개발 키트(HDK)](#hardware-development-kit-hdk)
+    - [FPGA 하드웨어 개발 키트(HDK)](#hardware-development-kit-hdk)
     - [FPGA 소프트웨어 개발 키트(SDK)](#runtime-tools-sdk)
-    - 소프트웨어 정의 개발 환경](#software-defined-development-environment)
+    - [소프트웨어 정의 개발 환경](#software-defined-development-environment)
 1. [아마존 EC2 F1 플랫폼 기능](#amazon-ec2-f1-platform-features)
 1. [시작하기](#getting-started) 1.
     - [AWS와 친숙해지기](#getting-familiar-with-aws)
