@@ -104,7 +104,7 @@ Amazon EC2 FPGA 인스턴스에서는 각 FPGA가 두 개의 파티션으로 나
 | Shell Name| Shell Version | Dev Kit Branch | Description|
 |--------|--------|---------|-------|
 | F1 XDMA Shell | F1.X.1.4 | [master](https://github.com/aws/aws-fpga/) |. DMA를 포함하는, 여기에 나열된 모든 [인터페이스](https://github.com/aws/aws-fpga/blob/master/hdk/docs/AWS_Shell_Interface_Specification.md)를 제공합니다. | 
-| F1 Small Shell | F1.S.1.0 | [small_shell](https://github.com/aws/aws-fpga/tree/small_shell) | 여기에 나열된 모든 [인터페이스]를 제공합니다(https://github.com/aws/aws-fpga/blob/small_shell/hdk/docs/AWS_Shell_Interface_Specification.md). 이 셸에는 DMA 엔진이 포함되어 있지 않으며 셸 리소스 사용량을 크게 줄여줍니다. |
+| F1 Small Shell | F1.S.1.0 | [small_shell](https://github.com/aws/aws-fpga/tree/small_shell) | 여기에 나열된 모든 [인터페이스](https://github.com/aws/aws-fpga/blob/small_shell/hdk/docs/AWS_Shell_Interface_Specification.md)를 제공합니다. 이 셸에는 DMA 엔진이 포함되어 있지 않으며 셸 리소스 사용량을 크게 줄여줍니다. |
 
 자세한 내용은 [FAQ](./FAQs.md#general-aws-fpga-shell-faqs)를 확인하세요.
 
@@ -201,25 +201,25 @@ FPGA Image generation and EC2 F1 instances are supported in the us-east-1 (N. Vi
 
 | Topic | Document Name |  Description |
 |-----------|-----------|------|
-| AWS setup | [Setup AWS CLI and S3 Bucket](./SDAccel/docs/Setup_AWS_CLI_and_S3_Bucket.md) | Setup instructions for preparing for AFI creation |
-| Developer Kit | [RELEASE NOTES](./RELEASE_NOTES.md), [Errata](./ERRATA.md) | Release notes and Errata for all developer kit features, excluding the shell  |
-| Developer Kit | [Errata](./ERRATA.md) | Errata for all developer kit features, excluding the shell  |
-| F1 Shell | [AWS Shell RELEASE NOTES](./hdk/docs/AWS_Shell_RELEASE_NOTES.md) | Release notes for F1 shell |
+| AWS setup | [Setup AWS CLI and S3 Bucket](./SDAccel/docs/Setup_AWS_CLI_and_S3_Bucket.md) | AFI 생성 준비를 위한 설정 지침 |
+| Developer Kit | [RELEASE NOTES](./RELEASE_NOTES.md), [Errata](./ERRATA.md) | 셸을 제외한 모든 개발자 키트 기능에 대한 릴리스 노트 및 오류 정보  |
+| Developer Kit | [Errata](./ERRATA.md) | 셸을 제외한 모든 개발자 키트 기능에 대한 오류 수정 사항  |
+| F1 Shell | [AWS Shell RELEASE NOTES](./hdk/docs/AWS_Shell_RELEASE_NOTES.md) | F1 셸의 릴리스 노트 |
 | F1 Shell | [AWS Shell ERRATA](./hdk/docs/AWS_Shell_ERRATA.md) | Errata for F1 shell |
-| F1 Shell | [AWS Shell Interface Specification](./hdk/docs/AWS_Shell_Interface_Specification.md) | Shell-CL interface specification for HDK developers building AFI |
-| F1 Shell - Timeout and AXI Protocol Protection | [How to detect a shell timeout](hdk/docs/HOWTO_detect_shell_timeout.md) | The shell will terminate transactions after a time period or on an illegal transaction.  This describes how to detect and gather data to help debug CL issues caused by timeouts. |
-| Vitis | [Debug Vitis Kernel](./Vitis/docs/Debug_Vitis_Kernel.md) | Instructions on debugging Vitis Kernel |
-| Vitis | [Create Runtime AMI](./Vitis/docs/Create_Runtime_AMI.md) | Instructions on creating a runtime AMI when using Xilinx Vitis|
-| Vitis | [XRT Instructions](./Vitis/docs/XRT_installation_instructions.md) | Instructions on building, installing XRT with MPD daemon considerations for F1 |
-| SDAccel | [Debug RTL Kernel](./SDAccel/docs/Debug_RTL_Kernel.md) | Instructions on debugging RTL Kernel with SDAccel |
-| SDAccel | [Create Runtime AMI](./SDAccel/docs/Create_Runtime_AMI.md) | Instructions on creating a runtime AMI when using Xilinx SDAccel|
-| HDK - Host Application | [Programmer View](./hdk/docs/Programmer_View.md) | Host application to CL interface specification |
-| HDK - CL Debug | [Debug using Virtual JTAG](./hdk/docs/Virtual_JTAG_XVC.md) | Debugging CL using Virtual JTAG (Chipscope)  |
-| HDK - Simulation | [Simulating CL Designs](./hdk/docs/RTL_Simulating_CL_Designs.md) | Shell-CL simulation specification |
-| HDK - Driver | [README](./sdk/linux_kernel_drivers/xdma/README.md) | Describes the DMA driver (XDMA) used by HDK examples and includes a link to an installation guide |
-| AFI | [AFI Management SDK](./sdk/userspace/fpga_mgmt_tools/README.md) | CLI documentation for managing AFI on the F1 instance |
-| AFI - EC2 CLI | [copy\_fpga\_image](./hdk/docs/copy_fpga_image.md), [delete\_fpga\_image](./hdk/docs/delete_fpga_image.md), [describe\_fpga\_images](./hdk/docs/describe_fpga_images.md), [fpga\_image\_attributes](./hdk/docs/fpga_image_attributes.md) | CLI documentation for administering AFIs |
-| AFI - Creation Error Codes | [create\_fpga\_image\_error\_codes](hdk/docs/create_fpga_image_error_codes.md) | CLI documentation for managing AFIs |
-| AFI - Power | [FPGA Power, recovering from clock gating](./hdk/docs/afi_power.md) | Helps developers with understanding FPGA power usage, preventing power violations on the F1 instance and recovering from a clock gated slot. |
-| On-premise Development | [Tools, Licenses required for on-premise development](./docs/on_premise_licensing_help.md) | Guidance for developer wanting to develop AFIs from on-premises instead of using the [FPGA Developer AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ) |
-| Frequently asked questions | [FAQ](./FAQs.md)| Q/A are added based on developer feedback and common AWS forum questions  |
+| F1 Shell | [AWS Shell Interface Specification](./hdk/docs/AWS_Shell_Interface_Specification.md) | AFI를 구축하는 HDK 개발자를 위한 Shell-CL 인터페이스 사양 |
+| F1 Shell - Timeout and AXI Protocol Protection | [How to detect a shell timeout](hdk/docs/HOWTO_detect_shell_timeout.md) | 셸은 일정 시간이 지나거나 불법적인 트랜잭션이 발생하면 트랜잭션을 종료합니다.  시간 초과로 인한 CL 문제를 디버깅하는 데 도움이 되는 데이터를 감지하고 수집하는 방법을 설명합니다. |
+| Vitis | [Debug Vitis Kernel](./Vitis/docs/Debug_Vitis_Kernel.md) | Vitis 커널 디버깅에 대한 지침 |
+| Vitis | [Create Runtime AMI](./Vitis/docs/Create_Runtime_AMI.md) | Xilinx Vitis 사용 시 런타임 AMI 생성에 대한 지침|
+| Vitis | [XRT Instructions](./Vitis/docs/XRT_installation_instructions.md) | F1을 위한 MPD 데몬 고려 사항이 포함된 XRT 빌드, 설치에 대한 지침 |
+| SDAccel | [Debug RTL Kernel](./SDAccel/docs/Debug_RTL_Kernel.md) | SDAccel을 사용한 RTL 커널 디버깅에 대한 지침 |
+| SDAccel | [Create Runtime AMI](./SDAccel/docs/Create_Runtime_AMI.md) | Xilinx SDAccel 사용 시 런타임 AMI 생성에 대한 지침 |
+| HDK - Host Application | [Programmer View](./hdk/docs/Programmer_View.md) | CL 인터페이스 사양에 대한 호스트 애플리케이션 |
+| HDK - CL Debug | [Debug using Virtual JTAG](./hdk/docs/Virtual_JTAG_XVC.md) | 가상 JTAG(칩스코프)를 사용하여 CL 디버깅하기  |
+| HDK - Simulation | [Simulating CL Designs](./hdk/docs/RTL_Simulating_CL_Designs.md) | Shell-CL 시뮬레이션 사양 |
+| HDK - Driver | [README](./sdk/linux_kernel_drivers/xdma/README.md) | HDK 예제에서 사용하는 DMA 드라이버(XDMA)를 설명하고 설치 가이드 링크를 포함합니다. |
+| AFI | [AFI Management SDK](./sdk/userspace/fpga_mgmt_tools/README.md) | F1 인스턴스에서 AFI를 관리하기 위한 CLI 문서 |
+| AFI - EC2 CLI | [copy\_fpga\_image](./hdk/docs/copy_fpga_image.md), [delete\_fpga\_image](./hdk/docs/delete_fpga_image.md), [describe\_fpga\_images](./hdk/docs/describe_fpga_images.md), [fpga\_image\_attributes](./hdk/docs/fpga_image_attributes.md) | AFI 관리를 위한 CLI 문서 |
+| AFI - Creation Error Codes | [create\_fpga\_image\_error\_codes](hdk/docs/create_fpga_image_error_codes.md) | AFI 관리를 위한 CLI 문서 |
+| AFI - Power | [FPGA Power, recovering from clock gating](./hdk/docs/afi_power.md) | 개발자가 FPGA 전력 사용량을 이해하고 F1 인스턴스의 전력 위반을 방지하며 클럭 게이트 슬롯에서 복구하는 데 도움을 줍니다. |
+| On-premise Development | [Tools, Licenses required for on-premise development](./docs/on_premise_licensing_help.md) | [FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)를 사용하지 않고 온프레미스에서 AFI를 개발하려는 개발자를 위한 가이드 |
+| Frequently asked questions | [FAQ](./FAQs.md)| 개발자 피드백과 일반적인 AWS 포럼 질문을 기반으로 Q/A가 추가됩니다.  |
