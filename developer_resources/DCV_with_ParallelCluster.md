@@ -49,10 +49,10 @@ F1 런타임 애플리케이션.
 
 <a name="requirements"></a>
 ## Requirements
-- You will need to subscribe to the [AWS FPGA Developer AMI on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)
-- You will need a VPC that has access to the internet, either using a public subnet or NAT gateway. 
-    - This is required to download all of the packages (for both DCV and OS packages) and to be able to connect to the instances.
-    - ParallelCluster instances can run in either private or public subnets that have access to the internet.
+- AWS 마켓플레이스에서 [AWS FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)를 구독해야 합니다.
+- 공용 서브넷 또는 NAT 게이트웨이를 사용하여 인터넷에 접속할 수 있는 VPC가 필요합니다. 
+    - 이는 모든 패키지(DCV 및 OS 패키지 모두)를 다운로드하고 인스턴스에 연결할 수 있도록 하기 위해 필요합니다.
+    - ParallelCluster 인스턴스는 인터넷에 액세스할 수 있는 사설 또는 공용 서브넷에서 실행할 수 있습니다.
     
 <a name="architecture"></a>
 ## Architecture
@@ -62,15 +62,15 @@ F1 런타임 애플리케이션.
 <a name="cost"></a>
 ## Cost
 
-There is no additional charge to use NICE DCV or ParallelCluster on Amazon EC2.
+Amazon EC2에서 NICE DCV 또는 ParallelCluster를 사용하는 데 추가 요금이 부과되지 않습니다.
 
-You only pay for the EC2 resources you use to run and store your workloads.
+워크로드를 실행하고 저장하는 데 사용하는 EC2 리소스에 대한 비용만 지불하면 됩니다.
 
 <a name="duration"></a>
 ## Duration
 
-The following table shows the estimated time for the different steps in this tutorial.
-The time it takes to complete each step will vary based on the instance types the instance types that use.
+다음 표는 이 튜토리얼의 여러 단계에 대한 예상 시간을 보여줍니다.
+각 단계를 완료하는 데 걸리는 시간은 사용하는 인스턴스 유형에 따라 달라집니다.
 
 | **Step**                                                    | **t3-2xlarge Duration** | **c5.4xlarge Duration** | **z1d.xlarge Duration** | **m5.2xlarge Duration** | **r5.xlarge Duration** |
 |-------------------------------------------------------------|-------------------------|-------------------------|-------------------------|-------------------------|------------------------|
