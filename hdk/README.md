@@ -237,7 +237,7 @@ AFI 생성을 시작합니다.
     AGFI ID는 (설계상) 전역이므로 AFI/AMI 조합을 여러 리전으로 복사할 수 있으며, 추가 설정 없이도 작동합니다.
     예시적인 AGFI ID는 **`agfi-0f0e045f919413242`**입니다.
 
-describe-fpga-images](./docs/describe_fpga_images.md) API를 사용하면 백그라운드 AFI 생성 프로세스 중에 AFI 상태를 확인할 수 있습니다.
+[describe-fpga-images](./docs/describe_fpga_images.md) API를 사용하면 백그라운드 AFI 생성 프로세스 중에 AFI 상태를 확인할 수 있습니다.
 `create-fpga-image`가 반환하는 **FPGA 이미지 식별자**를 제공해야 합니다:
 ```
     $ aws ec2 describe-fpga-images --fpga-image-ids afi-06d0ffc989feeea2a
