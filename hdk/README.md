@@ -31,7 +31,7 @@
 * 위에 나열된 영역에 익숙하지 않은 기존 RTL IP를 사용하는 개발자는 [소프트웨어 정의 가속](../Vitis/README.md)을 사용하여 RTL 커널 개발부터 시작해야 합니다.
 * 보다 빠른 HDK 개발 경로를 원하는 개발자는 [소프트웨어 정의 가속](../Vitis/README.md)을 사용하여 RTL 커널 개발부터 시작해야 합니다. 
 
-* 문서 디렉토리](./docs)는 AWS 셸(SH)-커스텀 로직(CL) 인터페이스에 대한 사양을 제공합니다:
+* [문서 디렉토리](./docs)는 AWS 셸(SH)-커스텀 로직(CL) 인터페이스에 대한 사양을 제공합니다:
   * [셸 인터페이스](./docs/AWS_Shell_Interface_Specification.md)
   * [셸 주소 맵](./docs/AWS_Fpga_Pcie_Memory_Map.md)
   * [프로그래머의 FPGA 뷰](./docs/Programmer_View.md)
@@ -40,7 +40,7 @@
   * [전력 분석](./docs/afi_power.md)
   * [셸 타임아웃 감지](./docs/HOWTO_detect_shell_timeout.md)
   
-* 공통 디렉터리](./common)에는 공통 환경 설정 스크립트, 공통 빌드 스크립트 및 제약 조건 파일, DRAM 컨트롤러와 같은 IP 라이브러리가 포함됩니다. 이 디렉터리에는 `shell_stable` 디렉터리 아래에 참조되는 프로덕션 셸이 포함되어 있습니다.  AWS 셸 디자인 체크포인트(DCP)는 HDK 설정 중에 S3에서 공통 디렉터리로 다운로드됩니다.
+* [공통 디렉터리](./common)에는 공통 환경 설정 스크립트, 공통 빌드 스크립트 및 제약 조건 파일, DRAM 컨트롤러와 같은 IP 라이브러리가 포함됩니다. 이 디렉터리에는 `shell_stable` 디렉터리 아래에 참조되는 프로덕션 셸이 포함되어 있습니다.  AWS 셸 디자인 체크포인트(DCP)는 HDK 설정 중에 S3에서 공통 디렉터리로 다운로드됩니다.
   * 개발자는 `/common` 디렉토리 아래의 파일을 변경할 필요가 없습니다.
   * 셸_안정` 디렉터리에는 개발자가 현재 프로덕션 셸을 사용하여 CL을 빌드하는 데 필요한 파일이 포함되어 있습니다.
 
@@ -123,7 +123,7 @@ The [Examples readme](./cl/examples/cl_examples_list.md) provides an overview of
 HDK 헬로 월드 예제를 사용하여 이 단계별 가이드를 완료하는 것이 좋습니다.  그런 다음 동일한 가이드를 사용하여 [cl\_dram\_dma](cl/examples/cl_dram_dma)를 사용하여 개발하세요.  준비가 되면 제공된 예제 중 하나를 복사하고 디자인 파일, 스크립트 및 제약 조건 디렉터리를 수정합니다.
 
 ```
-    $ cd $HDK_DIR/cl/examples/cl_hello_world    # you can change cl_hello_world to cl_dram_dma, cl_uram_example or cl_hello_world_vhdl
+    $ cd $HDK_DIR/cl/examples/cl_hello_world    # CL_HELLO_WORLD를 CL_DRAM_DMA, CL_URAM_EXAMPLE 또는 CL_HELLO_WORLD_VHDL로 변경할 수 있습니다.
     $ export CL_DIR=$(pwd)
 ```
 
@@ -135,9 +135,9 @@ HDK 헬로 월드 예제를 사용하여 이 단계별 가이드를 완료하는
 
 빌드 프로세스를 시작하기 전에 이 [체크리스트](./cl/CHECKLIST_BEFORE_BUILDING_CL.md)를 참조해야 합니다.
 
-**NOTE** *This step requires you to have Xilinx Vivado Tools and Licenses installed*
+**참고** *이 단계를 수행하려면 자일링스 Vivado 툴 및 라이선스가 설치되어 있어야 합니다*.
 ```
-    $ vivado -mode batch        # Verify Vivado is installed.
+    $ vivado -mode batch        # Vivado가 설치되었는지 확인합니다.
 ```
 
 `aws_build_dcp_from_cl.sh` 스크립트를 실행하면 CL 설계를 타겟 FPGA의 타이밍 및 배치 제약 조건을 충족하는 완성된 설계 체크포인트로 변환하는 전체 구현 프로세스가 수행됩니다.
