@@ -1,8 +1,8 @@
 # AWS FPGA Hardware Development Kit (HDK)
 
 ## Table of Contents
-1. [HDK 개요]( #overview)
-2. [시작하기]( #gettingstarted)
+1. [HDK 개요](#overview)
+2. [시작하기](#gettingstarted)
     - [AWS 계정, F1/EC2 인스턴스, 온프레미스, AWS IAM 권한, AWS CLI 및 S3 설정(일회성 설정)](#iss)
     - [HDK 설치 및 설정 환경](#setup)
     - [예제 리뷰](#examples)
@@ -97,7 +97,7 @@ AWS FPGA HDK를 실행하여 인스턴스에 복제할 수 있습니다:
     $ source hdk_setup.sh
 ```
 
-hdk_setup.sh` 소싱은 다음을 수행합니다:
+`hdk_setup.sh` 소싱은 다음을 수행합니다:
 * HDK의 예제 전체에서 사용되는 필수 환경 변수를 설정합니다.  
 * S3에서 DDR 시뮬레이션 모델과 DCP를 다운로드합니다.  
 
