@@ -288,7 +288,7 @@ AFI를 FPGA에 로드하려면 FPGA 관리 툴이 필요합니다.  F1 인스턴
 ```
 AWS CLI 설치는 [AWS CLI 설치 가이드](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)를 참고하세요.
 ```
-    $ aws configure         # to set your credentials (found in your console.aws.amazon.com page) and instance region (us-east-1, us-west-2, eu-west-1 or us-gov-west-1)
+    $ aws configure         # 다음을 통해 자격 증명(console.aws.amazon.com 페이지에 있음)과 인스턴스 지역(us-east-1, us-west-2, eu-west-1 또는 us-gov-west-1)을 설정합니다.
 ```
 <a name="step5"></a>
 #### Step 5. Load the AFI
@@ -350,7 +350,7 @@ fpga-describe-local-image API 호출이 'Busy' 상태를 반환하면 FPGA가 �
 ## Simulate your Custom Logic design (RTL Simulation)
 
 Vivado XSIM 시뮬레이터를 사용하거나 자체 시뮬레이터(예: Synopsys의 VCS, Mentor의 Questa 또는 Cadence Incisive)를 가져올 수 있습니다.
-RTL 시뮬레이션 환경 설정](./docs/RTL_Simulating_CL_Designs.md#소개)에 따라 시뮬레이션을 실행하세요.
+[RTL 시뮬레이션 환경 설정](./docs/RTL_Simulating_CL_Designs.md#소개)에 따라 시뮬레이션을 실행하세요.
 
 <a name="buildcl"></a>
 ## Start your own Custom Logic design (RTL flow, using Verilog or VHDL)
