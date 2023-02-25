@@ -192,8 +192,8 @@ FPGA Image generation and EC2 F1 instances are supported in the us-east-1 (N. Vi
 ### How Tos
 | How To                                                                                | Description                                                                            | 
 |---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| [Migrate Alveo U200 designs to F1 - Vitis](./Vitis/docs/Alveo_to_AWS_F1_Migration.md) | This application note shows the ease of migrating an Alveo U200 design to F1.          | 
- | [Migrate Alveo U200 designs to F1 - HDK](./hdk/docs/U200_to_F1_migration_HDK.md)      | Path to migrate from U200 vivado design flow to F1 HDK flow using AWS provided shells. |                                                                 
+| [Migrate Alveo U200 designs to F1 - Vitis](./Vitis/docs/Alveo_to_AWS_F1_Migration.md) | 이 애플리케이션 노트는 알베오 U200 디자인을 F1으로 쉽게 마이그레이션하는 방법을 보여줍니다.          | 
+ | [Migrate Alveo U200 designs to F1 - HDK](./hdk/docs/U200_to_F1_migration_HDK.md)      | AWS 제공 셸을 사용하여 U200 비바도 디자인 플로우에서 F1 HDK 플로우로 마이그레이션하는 경로입니다. |                                                                 
 
 # Documentation Overview
 
