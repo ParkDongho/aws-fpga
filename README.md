@@ -1,20 +1,20 @@
 # Table of Contents
 
-1. [Overview of AWS EC2 FPGA Development Kit](#overview-of-aws-ec2-fpga-development-kit)
-    - [Developer Support](#developer-support)
-    - [Development Flow](#development-flow)
-    - [Development environments](#development-environments)
-    - [FPGA Developer AMI](#fpga-developer-ami)
-    - [FPGA Hardware Development Kit (HDK)](#hardware-development-kit-hdk)
-    - [FPGA Software Development Kit (SDK)](#runtime-tools-sdk)
-    - [Software Defined Development Environment](#software-defined-development-environment)
-1. [Amazon EC2 F1 platform features](#amazon-ec2-f1-platform-features)
-1. [Getting Started](#getting-started)
-    - [Getting Familiar with AWS](#getting-familiar-with-aws)
-    - [First time setup](#setting-up-development-environment-for-the-first-time)
-    - [Quickstarts](#quickstarts)
-    - [How To's](#how-tos)
-1. [Documentation Overview](#documentation-overview)
+1. [AWS EC2 FPGA 개발 키트 개요](#overview-of-aws-ec2-fpga-development-kit)
+    - [개발자 지원](#developer-support)
+    - [개발 흐름](#development-flow)
+    - [개발 환경](#development-environments)
+    - [FPGA 개발자 AMI](#fpga-developer-ami)
+- [FPGA 하드웨어 개발 키트(HDK)](#hardware-development-kit-hdk)
+    - [FPGA 소프트웨어 개발 키트(SDK)](#runtime-tools-sdk)
+    - 소프트웨어 정의 개발 환경](#software-defined-development-environment)
+1. [아마존 EC2 F1 플랫폼 기능](#amazon-ec2-f1-platform-features)
+1. [시작하기](#getting-started) 1.
+    - [AWS와 친숙해지기](#getting-familiar-with-aws)
+    - [처음 설정](#setting-up-development-environment-for-the-first-time)
+    - [빠른 시작](#quickstarts)
+    - [사용법](#how-tos)
+1. [문서 개요](#documentation-overview)
 
 # Overview of AWS EC2 FPGA Development Kit
 
