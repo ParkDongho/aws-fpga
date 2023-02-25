@@ -2,7 +2,7 @@
 
 # GUI FPGA Development Environment with NICE DCV and ParallelCluster
 
-Deploy a CloudFormation template to Launch an EC2 instance with the FPGA Developer AMI that has DCV Remote Desktop and ParallelCluster.
+CloudFormation 템플릿을 배포하여 DCV 원격 데스크톱 및 ParallelCluster가 있는 FPGA 개발자 AMI로 EC2 인스턴스를 시작합니다.
 
 ## Table of Contents
 
@@ -26,25 +26,25 @@ Deploy a CloudFormation template to Launch an EC2 instance with the FPGA Develop
 <a name="overview"></a>
 ## Overview
 
-This tutorial shows how to launch an EC2 instance using the FPGA Developer AMI that has
-[NICE DCV](https://docs.aws.amazon.com/dcv/latest/adminguide/what-is-dcv.html) and
+이 튜토리얼에서는 FPGA 개발자 AMI를 사용하여 EC2 인스턴스를 시작하는 방법을 보여줍니다.
+[NICE DCV](https://docs.aws.amazon.com/dcv/latest/adminguide/what-is-dcv.html) 및
 [AWS ParallelCluster](https://docs.aws.amazon.com/parallelcluster/latest/ug/what-is-aws-parallelcluster.html)
-installed and configured to enable FPGA development in a GUI environment that is high performance
-and cost effective.
+를 설치 및 구성하여 고성능의 GUI 환경에서 비용 효율적으로
+비용 효율적입니다.
 
-[NICE DCV](https://docs.aws.amazon.com/dcv/latest/adminguide/what-is-dcv.html) is a high-performance remote 
-display protocol that provides customers with a secure way to deliver remote desktops and application streaming 
-from any cloud or data center to any device, over varying network conditions. 
+[NICE DCV](https://docs.aws.amazon.com/dcv/latest/adminguide/what-is-dcv.html)는 고성능 원격 디스플레이 프로토콜입니다. 
+고성능 원격 디스플레이 프로토콜로, 고객에게 원격 데스크톱 및 애플리케이션 스트리밍을 제공하는 안전한 방법을 제공합니다. 
+다양한 네트워크 조건에서 모든 클라우드 또는 데이터 센터에서 모든 장치로 원격 데스크톱 및 애플리케이션 스트리밍을 안전하게 제공할 수 있는 방법을 제공합니다. 
 
-With NICE DCV and Amazon EC2, customers can run graphics-intensive applications remotely on EC2 instances
-and stream the results to simpler client machines, eliminating the need for expensive dedicated workstations.
-Customers across a broad range of HPC workloads use NICE DCV for their remote visualization requirements.
-The NICE DCV streaming protocol is also utilized by popular services like Amazon AppStream 2.0 and AWS RoboMaker.
+NICE DCV와 Amazon EC2를 통해 고객은 EC2 인스턴스에서 그래픽 집약적인 애플리케이션을 원격으로 실행하고
+결과를 더 간단한 클라이언트 머신으로 스트리밍할 수 있으므로 고가의 전용 워크스테이션이 필요하지 않습니다.
+광범위한 HPC 워크로드의 고객들이 원격 시각화 요구사항에 NICE DCV를 사용합니다.
+NICE DCV 스트리밍 프로토콜은 Amazon AppStream 2.0 및 AWS RoboMaker와 같은 인기 서비스에서도 활용되고 있습니다.
 
-[AWS ParallelCluster](https://docs.aws.amazon.com/parallelcluster/latest/ug/what-is-aws-parallelcluster.html)
-provides a scalable compute environment for running compute or resource intensive jobs such as DCP generation or
-F1 runtime applications.
-ParallelCluster can help manage costs by automatically starting and terminating instances as needed by jobs.
+[AWS 패러렐클러스터](https://docs.aws.amazon.com/parallelcluster/latest/ug/what-is-aws-parallelcluster.html)
+는 DCP 생성이나 F1 런타임 애플리케이션과 같은 컴퓨팅 또는 리소스 집약적인 작업을 실행하기 위한 확장 가능한 컴퓨팅 환경을 제공합니다.
+F1 런타임 애플리케이션.
+작업의 필요에 따라 인스턴스를 자동으로 시작하고 종료함으로써 비용 관리에 도움을 줄 수 있습니다.
 
 
 <a name="requirements"></a>
