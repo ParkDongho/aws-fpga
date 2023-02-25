@@ -18,7 +18,7 @@
 5. [커스텀 로직 설계 시작하기](#buildcl)(Verilog 또는 VHDL 사용, RTL 흐름)
 
 <a name="overview"></a>
-## HDK Overview
+## HDK 개요
 
 * HDK는 개발자에게 F1에서 완전 맞춤형 하드웨어 가속기를 빌드할 수 있는 정보, 예제 및 스크립트를 제공합니다.  완전 커스텀 하드웨어 가속기는 개발하는 데 몇 달이 걸릴 수 있으며 개발자는 이에 익숙해야 합니다:
   * 스크립팅(셸, tcl)
@@ -48,7 +48,7 @@
 예제에 대한 자세한 내용은 [예제 테이블](./cl/examples/cl_examples_list.md)을 참조하세요.
 
 <a name="gettingstarted"></a>
-## Getting Started
+## 시작하기
 
 <a name="iss"></a>
 #### AWS 계정, F1/EC2 인스턴스, 온프레미스, AWS IAM 권한, AWS CLI 및 S3 설정(일회성 설정)
