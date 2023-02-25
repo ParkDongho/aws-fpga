@@ -1,20 +1,20 @@
 # "Hello World" example 
 
-This lab covers the basics of using F1 instances and running a _hello world_ demo provided by Amazon. The development and simulation of the code can be done on a different type of EC2 instance (for example from the [M5 family or the C5 family](https://aws.amazon.com/ec2/instance-types/)). This would be ideal to limit costs. For simplicity, we have undergone the whole lab on a F1 FPGA-equipped instance.
+이 실습에서는 F1 인스턴스 사용과 Amazon에서 제공하는 _hello world_ 데모 실행에 대한 기본 사항을 다룹니다. 코드 개발 및 시뮬레이션은 다른 유형의 EC2 인스턴스(예: [M5 제품군 또는 C5 제품군](https://aws.amazon.com/ec2/instance-types/))에서 수행할 수 있습니다. 이는 비용을 제한하는 데 이상적입니다. 단순화를 위해 전체 실습은 F1 FPGA가 장착된 인스턴스에서 진행했습니다.
 
-The entire lab can be done through the command line or the AWS console.
+전체 실습은 명령줄 또는 AWS 콘솔을 통해 수행할 수 있습니다.
 
-The Hello World example will allow us to write to FPGA resgisters and then read them back. We are simulating switches and leds. The idea is to push a series of vdips (series of bits).The vdips are combined with a register through an “AND” function. The output is the vleds.
+Hello World 예제에서는 FPGA 레지스터에 쓴 다음 다시 읽을 수 있습니다. 우리는 스위치와 LED를 시뮬레이션하고 있습니다. 아이디어는 일련의 vdip(일련의 비트)을 푸시하는 것입니다. vdip은 "AND" 함수를 통해 레지스터와 결합됩니다. 출력은 vled입니다.
 
 
-# 1. Creating an S3 bucket for the Amazon FPGA Image
+# 1. Amazon FPGA 이미지용 S3 버킷 생성하기
 
-Before launching and configuring an instance, we are going to create a S3 Bucket which will be needed for the generation of the “AFI” (Amazon FPGA Image). The bucket will contain a *.tar file and logs which are generated with the AFI creation service.
+인스턴스를 시작하고 구성하기 전에 "AFI"(Amazon FPGA 이미지)를 생성하는 데 필요한 S3 버킷을 생성하겠습니다. 버킷에는 AFI 생성 서비스를 통해 생성된 *.tar 파일과 로그가 포함됩니다.
 
-Go the AWS Console, choose the S3 service, and then create a bucket
+AWS 콘솔로 이동하여 S3 서비스를 선택한 다음 버킷을 생성합니다.
 ![](https://aws-fpga-hdk-resources.s3.amazonaws.com/artifacts/images/quickstarts/hello_world/labfpga01.png)
 
-Complete with your preferred settings, also by choosing the region. We recommend the region to be the one where your F1 instance is running. In our case, it is eu-west-1.
+지역을 선택하여 원하는 설정을 완료합니다. 지역은 F1 인스턴스가 실행 중인 지역으로 선택하는 것이 좋습니다. 저희의 경우, eu-west-1입니다.
 
 ![](https://aws-fpga-hdk-resources.s3.amazonaws.com/artifacts/images/quickstarts/hello_world/labfpga02.png)
 ![](https://aws-fpga-hdk-resources.s3.amazonaws.com/artifacts/images/quickstarts/hello_world/labfpga03.png)
