@@ -9,7 +9,7 @@
     - [FPGA 소프트웨어 개발 키트(SDK)](#runtime-tools-sdk)
     - [소프트웨어 정의 개발 환경](#software-defined-development-environment)
 1. [아마존 EC2 F1 플랫폼 기능](#amazon-ec2-f1-platform-features)
-1. [시작하기](#getting-started) 1.
+1. [시작하기](#getting-started)
     - [AWS와 친숙해지기](#getting-familiar-with-aws)
     - [처음 설정](#setting-up-development-environment-for-the-first-time)
     - [빠른 시작](#quickstarts)
