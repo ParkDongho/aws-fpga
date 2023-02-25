@@ -51,7 +51,7 @@
 ## Getting Started
 
 <a name="iss"></a>
-#### AWS Account, F1/EC2 Instances, On-Premises, AWS IAM Permissions, AWS CLI and S3 Setup (One-time Setup)
+#### AWS 계정, F1/EC2 인스턴스, 온프레미스, AWS IAM 권한, AWS CLI 및 S3 설정(일회성 설정)
 * [AWS 계정 설정](https://aws.amazon.com/free/)
 * 비바도와 함께 사전 설치되어 있는 [FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)와 필요한 라이선스를 사용하여 인스턴스를 실행합니다.  AWS FPGA 인스턴스 내부에 사용되는 FPGA의 크기가 크기 때문에 구현 도구에는 32GiB 메모리가 필요합니다(예: c4.4xlarge, m4.2xlarge, r4.xlarge, t2.2xlarge). c4.4xlarge와 c4.8xlarge는 각각 30, 60GiB의 메모리로 가장 빠른 실행 시간을 제공합니다. 비용을 절감하려는 개발자는 t2.2xlarge와 같은 저비용 인스턴스에서 코딩을 시작하고 시뮬레이션을 실행한 다음 앞서 언급한 대용량 인스턴스로 이동하여 가속 코드 합성을 실행할 수 있습니다.  온프레미스 지침](../docs/on_premise_licensing_help.md)에 따라 Xilinx에서 라이선스를 구매하고 설치합니다.
 * 호환성 표는 개발자 키트 버전과 [FPGA Developer AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ) 버전의 매핑에 대해 설명합니다:  
@@ -84,7 +84,7 @@
 프로필 기본 지역을 재정의하려면 aws-cli [region](http://docs.aws.amazon.com/cli/latest/userguide/cli-command-line.html) 명령줄 인수를 사용합니다.  지원되는 지역은 us-east-1, us-west-2, eu-west-1 및 us-gov-west-1입니다.
 
 <a name="setup"></a>
-#### Install the HDK and setup environment
+#### HDK 설치 및 설정 환경
 
 AWS FPGA HDK를 실행하여 인스턴스에 복제할 수 있습니다:
 
@@ -104,21 +104,21 @@ hdk_setup.sh` 소싱은 다음을 수행합니다:
 새 단말기 또는 기존 단말기는 올바른 환경 변수를 설정하기 위해 `hdk_setup.sh`를 다시 실행해야 합니다.  
 
 <a name="examples"></a>
-#### Review examples 
+#### 예제 리뷰 
 
 [Examples readme](./cl/exples/cl_exples_list.md)에는 개발자가 사용할 수 있는 모든 예제에 대한 개요가 나와 있습니다.
 
 <a name="endtoend"></a>
-## How To Create an Amazon FPGA Image (AFI) From One of The CL Examples: Step-by-Step Guide
+## CL 예제 중 하나에서 Amazon FPGA 이미지(AFI)를 생성하는 방법: 단계별 가이드
 
 <a name="fastpath"></a>
-#### Fast path to running CL Examples on FPGA Instance
+#### FPGA 인스턴스에서 CL 예제를 실행하는 빠른 경로
 
 개발 흐름을 건너뛰고 FPGA 인스턴스에서 예제 실행을 시작하려는 개발자를 위한 것입니다.  개발 프로세스에 관심이 없는 경우 1~3단계를 건너뛰어도 됩니다.  4단계부터 6단계까지는 미리 설계된 AFI 예제 중 하나를 사용하는 방법을 보여줍니다. 
 공개 AFI를 사용하면 개발자는 빌드 흐름 단계를 건너뛰고 4단계로 이동할 수 있습니다. [공개 AFI는 각 예제마다 사용할 수 있으며, 예제/README](cl/examples/cl_hello_world/README.md#metadata)에서 찾을 수 있습니다.
 
 <a name="step1"></a>
-#### Step 1. Pick one of the examples and start in the example directory
+#### 1단계. 예제 중 하나를 선택하고 예제 디렉토리에서 시작합니다.
 
 HDK 헬로 월드 예제를 사용하여 이 단계별 가이드를 완료하는 것이 좋습니다.  그런 다음 동일한 가이드를 사용하여 [cl\_dram\_dma](cl/examples/cl_dram_dma)를 사용하여 개발하세요.  준비가 되면 제공된 예제 중 하나를 복사하고 디자인 파일, 스크립트 및 제약 조건 디렉터리를 수정합니다.
 
@@ -131,7 +131,7 @@ HDK 헬로 월드 예제를 사용하여 이 단계별 가이드를 완료하는
 각 예제에서는 권장 디렉터리 구조를 따라 HDK 시뮬레이션 및 빌드 스크립트에 예상되는 구조와 일치하도록 합니다.
 
 <a name="step2"></a>
-#### Step 2. Build the CL
+#### 2단계. CL 빌드
 
 빌드 프로세스를 시작하기 전에 이 [체크리스트](./cl/CHECKLIST_BEFORE_BUILDING_CL.md)를 참조해야 합니다.
 
@@ -180,7 +180,7 @@ HDK 헬로 월드 예제를 사용하여 이 단계별 가이드를 완료하는
    [cl\_uram\_example warnings](cl/examples/cl_uram_example/build/scripts/warnings.txt )
 
 <a name="step3"></a>
-#### Step 3. Submit the Design Checkpoint to AWS to Create the AFI
+#### 3단계. AWS에 디자인 체크포인트를 제출하여 AFI 생성하기
 
 DCP를 제출하려면 디자인을 제출하기 위한 S3 버킷을 생성하고 해당 버킷에 타볼 파일을 업로드합니다.
 다음 정보를 준비해야 합니다:
@@ -272,13 +272,13 @@ AFI가 성공적으로 생성되었는지 확인할 때까지 기다리세요.
 **참고**: *AFI가 생성된 지역과 다른 지역에서 AFI를 로드하려고 하면 `Invalid AFI ID` 오류가 발생합니다.  AFI는 리전으로 복사해야 합니다*.
 [copy-fpga-image](./docs/copy_fpga_image.md) API를 사용하면 AFI를 다른 리전으로 복사하여 시간이 많이 걸리는 `create-fpga-image` 프로세스를 피할 수 있습니다. 또한 복사하면 소스 글로벌 AFI ID를 보존하고 인스턴스 코드나 스크립트의 지역별 변경 사항을 최소화할 수 있습니다.
 
-#### Step by step guide how to load and test a registered AFI from within an F1 instance
+#### F1 인스턴스 내에서 등록된 AFI를 로드하고 테스트하는 방법을 단계별로 안내합니다.
 
 다음 단계를 수행하려면 F1 인스턴스를 시작해야 합니다.
 AWS는 FPGA 관리 도구가 포함된 최신 Amazon Linux 인스턴스를 시작하거나, HDK와 SDK가 모두 포함된 FPGA 개발자 AMI를 사용하는 것을 권장합니다.
 
 <a name="step4"></a>
-#### Step 4. Setup AWS FPGA Management tools
+#### 4단계. AWS FPGA 관리 도구 설정
 
 AFI를 FPGA에 로드하려면 FPGA 관리 툴이 필요합니다.  F1 인스턴스를 실행하는 데 사용되는 AMI에 따라 이러한 단계가 이미 완료되었을 수 있습니다.
 ```
@@ -291,7 +291,7 @@ AWS CLI 설치는 [AWS CLI 설치 가이드](http://docs.aws.amazon.com/cli/late
     $ aws configure         # 다음을 통해 자격 증명(console.aws.amazon.com 페이지에 있음)과 인스턴스 지역(us-east-1, us-west-2, eu-west-1 또는 us-gov-west-1)을 설정합니다.
 ```
 <a name="step5"></a>
-#### Step 5. Load the AFI
+#### 5단계. AFI 로드
 
 이제 F1 인스턴스 내에서 FPGA 관리 툴을 사용하여 특정 슬롯의 FPGA에 AFI를 로드할 수 있습니다.
 이전에 슬롯에 로드한 AFI를 모두 지워야 합니다:
@@ -332,7 +332,7 @@ fpga-describe-local-image API 호출이 'Busy' 상태를 반환하면 FPGA가 �
 ```
     
 <a name="step6"></a>
-#### Step 6. Validating using the CL Example Software
+#### 6단계. CL 예제 소프트웨어를 사용하여 검증
 
 사전 설치된 Xilinx 런타임 환경(XRT)과 함께 제공되는 AMI 1.5.0 이상 인스턴스를 사용하는 개발자는 XDMA 드라이버를 설치하기 전에 [참고 사항](../sdk/linux_kernel_drivers/xdma/xdma_install.md#xdmainstallfail)을 참고해야 합니다.
 
@@ -347,13 +347,13 @@ fpga-describe-local-image API 호출이 'Busy' 상태를 반환하면 FPGA가 �
 예제별 추가 정보는 $CL_DIR/README.md에 있는 README.md를 검토하세요.
 
 <a name="simcl"></a>
-## Simulate your Custom Logic design (RTL Simulation)
+## 커스텀 로직 디자인 시뮬레이션(RTL 시뮬레이션)
 
 Vivado XSIM 시뮬레이터를 사용하거나 자체 시뮬레이터(예: Synopsys의 VCS, Mentor의 Questa 또는 Cadence Incisive)를 가져올 수 있습니다.
 [RTL 시뮬레이션 환경 설정](./docs/RTL_Simulating_CL_Designs.md#소개)에 따라 시뮬레이션을 실행하세요.
 
 <a name="buildcl"></a>
-## Start your own Custom Logic design (RTL flow, using Verilog or VHDL)
+## 나만의 커스텀 로직 설계 시작(RTL 흐름, Verilog 또는 VHDL 사용)
 
 * 새 설계를 시작하기 전에 AWS 셸(SH)에서 커스텀 로직(CL)으로의 [인터페이스](./docs/AWS_Shell_Interface_Specification.md)의 사양을 검토하세요.
 * [디버그 흐름](docs/Virtual_JTAG_XVC.md)을 시도하고 [셸 타임아웃 동작](docs/HOWTO_detect_shell_timeout.md)을 이해합니다.
