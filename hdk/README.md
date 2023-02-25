@@ -53,7 +53,7 @@
 <a name="iss"></a>
 #### AWS 계정, F1/EC2 인스턴스, 온프레미스, AWS IAM 권한, AWS CLI 및 S3 설정(일회성 설정)
 * [AWS 계정 설정](https://aws.amazon.com/free/)
-* 비바도와 함께 사전 설치되어 있는 [FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)와 필요한 라이선스를 사용하여 인스턴스를 실행합니다.  AWS FPGA 인스턴스 내부에 사용되는 FPGA의 크기가 크기 때문에 구현 도구에는 32GiB 메모리가 필요합니다(예: c4.4xlarge, m4.2xlarge, r4.xlarge, t2.2xlarge). c4.4xlarge와 c4.8xlarge는 각각 30, 60GiB의 메모리로 가장 빠른 실행 시간을 제공합니다. 비용을 절감하려는 개발자는 t2.2xlarge와 같은 저비용 인스턴스에서 코딩을 시작하고 시뮬레이션을 실행한 다음 앞서 언급한 대용량 인스턴스로 이동하여 가속 코드 합성을 실행할 수 있습니다.  온프레미스 지침](../docs/on_premise_licensing_help.md)에 따라 Xilinx에서 라이선스를 구매하고 설치합니다.
+* 비바도와 함께 사전 설치되어 있는 [FPGA 개발자 AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ)와 필요한 라이선스를 사용하여 인스턴스를 실행합니다.  AWS FPGA 인스턴스 내부에 사용되는 FPGA의 크기가 크기 때문에 구현 도구에는 32GiB 메모리가 필요합니다(예: c4.4xlarge, m4.2xlarge, r4.xlarge, t2.2xlarge). c4.4xlarge와 c4.8xlarge는 각각 30, 60GiB의 메모리로 가장 빠른 실행 시간을 제공합니다. 비용을 절감하려는 개발자는 t2.2xlarge와 같은 저비용 인스턴스에서 코딩을 시작하고 시뮬레이션을 실행한 다음 앞서 언급한 대용량 인스턴스로 이동하여 가속 코드 합성을 실행할 수 있습니다.  [온프레미스 지침](../docs/on_premise_licensing_help.md)에 따라 Xilinx에서 라이선스를 구매하고 설치합니다.
 * 호환성 표는 개발자 키트 버전과 [FPGA Developer AMI](https://aws.amazon.com/marketplace/pp/B06VVYBLZZ) 버전의 매핑에 대해 설명합니다:  
 
 | 개발자 키트 버전 | 지원되는 툴 버전 | 호환되는 FPGA 개발자 AMI 버전 |
