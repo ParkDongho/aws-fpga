@@ -184,7 +184,7 @@ ENOMEM - System is out of memory.<br />
 
 XDMA 드라이버는 문자 장치 파일 위치를 수정하는 표준 `lseek()` Linux/POSIX 시스템 호출을 구현합니다. 이 위치는 `read()`/`write()`에서 FPGA 메모리 공간을 가리키는 데 사용됩니다. 
 
-**WARNING: ** 동시/멀티 스레드 설계에서 `lseek()`을 `read()/write()`로 원자적 후속 조치 없이 동시에 호출할 수 있으므로 적절한 잠금 없이 `lseek()`을 호출하면 오류가 발생하기 쉽습니다.
+**WARNING:** 동시/멀티 스레드 설계에서 `lseek()`을 `read()/write()`로 원자적 후속 조치 없이 동시에 호출할 수 있으므로 적절한 잠금 없이 `lseek()`을 호출하면 오류가 발생하기 쉽습니다.
 
 file_pos는 파일 속성이므로 `write()` 및 `read()` 연산에 의해 성공적으로 쓰거나 읽은 바이트 수만큼 증가합니다.
 
