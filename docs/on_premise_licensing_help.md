@@ -1,8 +1,8 @@
-# Enabling on-premises development with Xilinx tools
+# Xilinx 툴을 사용하여 온프레미스 개발 지원
 
-**NOTE: If you are developing on the AWS cloud and using AWS FPGA Developer AMI provided on AWS Marketplace, you can skip this document.**
+**참고: AWS 클라우드에서 개발 중이며 AWS 마켓플레이스에서 제공되는 AWS FPGA 개발자 AMI를 사용하는 경우 이 문서를 건너뛸 수 있습니다.**.
 
-This document helps developers who choose to develop on-premises with specifying and licensing AWS-compatible Xilinx tools for use with the AWS FPGA HDK.
+이 문서는 온프레미스 개발을 선택한 개발자가 AWS FPGA HDK와 함께 사용할 AWS 호환 Xilinx 툴을 지정하고 라이센스를 취득하는 데 도움이 됩니다.
 ## Requirements for AWS HDK 1.4.18+ (2020.2)
  * Xilinx Vivado or Vitis v2020.2
  * License: EF-VIVADO-SDX-VU9P-OP
