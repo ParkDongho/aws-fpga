@@ -36,7 +36,7 @@
   * [셸 주소 맵](./docs/AWS_Fpga_Pcie_Memory_Map.md)
   * [프로그래머의 FPGA 뷰](./docs/Programmer_View.md)
   * [가상 JTAG](./docs/Virtual_JTAG_XVC.md)
-  * 테스트벤치 및 셸 시뮬레이션 모델을 사용한 RTL 설계 시뮬레이션](./docs/RTL_Simulating_CL_Designs.md)
+  * [테스트벤치 및 셸 시뮬레이션 모델을 사용한 RTL 설계 시뮬레이션](./docs/RTL_Simulating_CL_Designs.md)
   * [전력 분석](./docs/afi_power.md)
   * [셸 타임아웃 감지](./docs/HOWTO_detect_shell_timeout.md)
   
