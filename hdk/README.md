@@ -172,7 +172,7 @@ HDK 헬로 월드 예제를 사용하여 이 단계별 가이드를 완료하는
 ```
 
 2. 이메일 주소를 확인하고 구독을 확인합니다.
-3. aws_build_dcp_from_cl.sh` 호출 시, `-notify` 스위치를 추가합니다.
+3. `aws_build_dcp_from_cl.sh` 호출 시, `-notify` 스위치를 추가합니다.
 4. 빌드가 완료되면 "빌드가 완료되었습니다"라는 이메일이 발송됩니다.
 5. 각 예제에 대해 알려진 경고는 $CL_DIR/build/scripts 디렉터리에 있는 warnings.txt 파일에 문서화되어 있습니다.
    [cl\_hello\_world warnings](cl/examples/cl_hello_world/build/scripts/warnings.txt )
