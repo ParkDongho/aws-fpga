@@ -73,7 +73,7 @@
 
 * FPGA 개발자 키트 지원 툴 버전은 [supported\_vivado\_versions](../supported_vivado_versions.txt)에 나열됩니다.
 
-* FPGA 이미지 생성을 위한 AWS IAM 권한 설정(CreateFpgaImage 및 DescribeFpgaImages). [EC2 API 권한은 더 자세히 설명되어 있습니다](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ec2-api-permissions.html)를 참조하십시오.  이 빠른 시작을 진행하기 전에 AWS IAM 권한의 유효성을 검사하는 것이 좋습니다.  DescribeFpgaImages API](docs/describe_fpga_images.md)를 호출하여 IAM 권한이 올바른지 확인할 수 있습니다.
+* FPGA 이미지 생성을 위한 AWS IAM 권한 설정(CreateFpgaImage 및 DescribeFpgaImages). [EC2 API 권한은 더 자세히 설명되어 있습니다](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ec2-api-permissions.html)를 참조하십시오.  이 빠른 시작을 진행하기 전에 AWS IAM 권한의 유효성을 검사하는 것이 좋습니다.  [DescribeFpgaImages API](docs/describe_fpga_images.md)를 호출하여 IAM 권한이 올바른지 확인할 수 있습니다.
 
 * [AWS CLI 및 S3 버킷 설정](../SDAccel/docs/Setup_AWS_CLI_and_S3_Bucket.md)을 설치하여 AFI 생성을 활성화합니다.
   * AWS CLI 설치는 [AWS CLI 설치 가이드](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)를 참고하시기 바랍니다.
