@@ -14,34 +14,34 @@
 <a name="overview"></a>
 # Overview
 
-This document assumes you have cloned the developer kit and sourced the hdk setup.  However, the Windows instructions below do cover how to clone the developer kit and source scripts for hdk setup.  It is highly recommended that you get familar with the F1 FPGA development by building/running the [customer examples](../README.md) prior to using the Vivado GUI or IP Integrator.
+이 문서에서는 개발자 키트를 복제하고 hdk 설정을 소싱했다고 가정합니다.  그러나 아래 Windows 지침에서는 개발자 키트 및 소스 스크립트를 복제하는 방법과 hdk 설정을 위한 소스 스크립트를 다룹니다.  Vivado GUI 또는 IP 통합기를 사용하기 전에 [customer examples](../README.md)를 빌드/실행하여 F1 FPGA 개발에 익숙해지는 것을 적극 권장합니다.
 
-Once you are familiar with building an example AFI and running on F1, the [IP Integrator Tutorials and Examples](./IPI_GUI_Examples.md) documentation will help you get started on example designs, new designs, and additional tutorials.
+예제 AFI를 빌드하고 F1에서 실행하는 데 익숙해지면 [IP 통합기 튜토리얼 및 예제](./IPI_GUI_Examples.md) 문서에서 예제 설계, 새로운 설계 및 추가 튜토리얼을 시작하는 데 도움이 될 것입니다.
 
 
 <a name="hlxinst_lin"></a>
 # Linux Install
 
-Open the following file in a text editor ~/.Xilinx/Vivado/init.tcl or ~/.Xilinx/Vivado/Vivado_init.tcl
+텍스트 편집기에서 다음 파일을 엽니다. ~/.Xilinx/Vivado/init.tcl 또는 ~/.Xilinx/Vivado/Vivado_init.tcl.
 
-If either of these files does not exist, change directories into ~/.Xilinx/Vivado and use the following command to create the file.
+이 파일 중 하나가 없는 경우 디렉터리를 ~/.Xilinx/Vivado로 변경하고 다음 명령을 사용하여 파일을 생성합니다.
 
 `touch Vivado_init.tcl`
 
-Get the absolute path of the $HDK\_SHELL\_DIR with the following command.
+다음 명령을 사용하여 $HDK\_SHELL\_DIR의 절대 경로를 가져옵니다.
 
 `echo $HDK_SHELL_DIR`
 
-**NOTE: If your $HDK\_SHELL\_DIR is empty or does not list <path>/$HDK\_SHELL\_DIR/<shell dir>, then you may need to source the [hdk_setup](../README.md).**
+**참고: $HDK\_SHELL\_DIR이 비어 있거나 <path>/$HDK\_SHELL\_DIR/<shell dir>이 나열되지 않는 경우 [hdk_setup](../README.md)을 소싱해야 할 수 있습니다.**
 
-In init.tcl or Vivado\_init.tcl, add the following line based upon the $HDK\_SHELL\_DIR path.
+init.tcl 또는 Vivado\_init.tcl에서 $HDK\_SHELL\_DIR 경로에 따라 다음 줄을 추가합니다.
 
 `source $::env(HDK_SHELL_DIR)/hlx/hlx_setup.tcl`
 
 <a name="hlxhdk_switch"></a>
 ### Switching between HDK and HLx flows
-* ~/.Xilinx/Vivado/init.tcl or ~/.Xilinx/Vivado/Vivado_init.tcl scripts are sourced when Vivado starts up. Once you go through the Linux Install setup, IP integrator features will be automatically loaded every time. 
-* If you wish to switch to the HDK flow, Please remove the `source $::env(HDK_SHELL_DIR)/hlx/hlx_setup.tcl` line from your init.tcl or Vivado\_init.tcl file
+* ~/.Xilinx/Vivado/init.tcl 또는 ~/.Xilinx/Vivado/Vivado_init.tcl 스크립트는 Vivado가 시작될 때 소싱됩니다. Linux 설치 설정을 진행하면 IP 통합기 기능이 매번 자동으로 로드됩니다. 
+* HDK 플로우로 전환하려면 init.tcl 또는 Vivado\_init.tcl 파일에서 `source $::env(HDK_SHELL_DIR)/hlx/hlx_setup.tcl` 줄을 제거하십시오.
 
 <a name="hlxinst_win"></a>
 # Windows Install
@@ -86,50 +86,50 @@ Amazon CLI for Windows can be used for access to S3 to upload .tar and ingestion
 <a name="vivado"></a>
 # Vivado Overview
 
-This section is a basic overview of the Vivado GUI.  The GUI environment enables developers at all experience levels to quickly set project options and strategies to meet their design requirements,  enables interactive reports and design views to help quickly close any issues with timing or area.
+이 섹션은 Vivado GUI에 대한 기본 개요입니다.  GUI 환경에서는 모든 경험 수준의 개발자가 설계 요구 사항을 충족하는 프로젝트 옵션과 전략을 신속하게 설정할 수 있으며, 대화형 보고서 및 설계 보기를 통해 시기 또는 영역과 관련된 문제를 신속하게 해결할 수 있습니다.
 
-IP Integrator is a design entry tool in the Vivado HLx Design Suite.  It lets developers connect IPs at a block level and generates a "what you see is what you get" Register Transfer Language (RTL) file, either in VHDL or Verilog format.  The IP Integrator flow enhances the standard RTL flow and gives the developer access to designer assistance features which include:
-
-
-- Simplified connectivity of IPs through interface based connections
-
-- Block automation that adds helper IPs like Interconnects, DMAs, or other support blocks based upon an IP’s configuration
-
-- Connectivity automation to route interfaces, clocks and resets between blocks
-
-- Design Rule Checks (DRCs) to ensure proper interface connectivity and clock domain crossing
-
-- Advanced hardware debug capabilities that enable the developer to debug at a transaction level
+IP 인티그레이터는 Vivado HLx 디자인 스위트의 디자인 입력 툴입니다.  이 툴을 사용하면 개발자가 블록 수준에서 IP를 연결하고 "보이는 그대로" RTL(Register Transfer Language) 파일을 VHDL 또는 Verilog 형식으로 생성할 수 있습니다.  IP 통합기 플로우는 표준 RTL 플로우를 개선하고 개발자에게 다음과 같은 디자이너 지원 기능에 대한 액세스를 제공합니다:
 
 
-For more detailed information and methodology design guidelines refer to the following documentation:
+- 인터페이스 기반 연결을 통한 IP 연결 간소화
+
+- IP의 구성에 따라 인터커넥트, DMA 또는 기타 지원 블록과 같은 헬퍼 IP를 추가하는 블록 자동화
+
+- 블록 간에 인터페이스, 클록 및 리셋을 라우팅하는 연결 자동화
+
+- 적절한 인터페이스 연결 및 클록 도메인 크로싱을 보장하는 DRC(설계 규칙 검사)
+
+- 개발자가 트랜잭션 수준에서 디버깅할 수 있는 고급 하드웨어 디버그 기능
+
+
+자세한 정보 및 방법론 설계 가이드라인은 다음 문서를 참조하세요:
 
 - <a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_2/ug892-vivado-design-flows-overview.pdf">ug892-vivado-design-flows-overview.pdf</a>
 - <a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_2/ug994-vivado-ip-subsystems.pdf">ug994-vivado-ip-subsystems.pdf</a>
 - <a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_2/ug949-vivado-design-methodology.pdf">ug949-vivado-design-methodology.pdf</a>
 
 
-To open the GUI, run command `vivado`.  Once Vivado is loaded, you can create an empty project, by selecting Create New Project and advancing through the menus until you see a blank canvas.  The sections below will describe the tabs/menus and refer to the screenshot below.  Feel free to interact with the tabs and menus using your blank project.
+GUI를 열려면 `vivado` 명령을 실행하세요.  비바도가 로드되면 새 프로젝트 만들기를 선택하고 빈 캔버스가 표시될 때까지 메뉴를 진행하여 빈 프로젝트를 만들 수 있습니다.  아래 섹션에서는 탭/메뉴에 대해 설명하고 아래 스크린샷을 참조하세요.  빈 프로젝트를 사용하여 탭과 메뉴를 자유롭게 사용해 보세요.
 
 ![Diagram](./images/hlx/vivado_gui.jpg)
 
 ## Sources Tab
 
-The box in yellow contains the design sources.
+노란색 상자에는 디자인 소스가 들어 있습니다.
 
 ### Sources:Hierarchy Tab
 
-Sources are divided into three different categories.
+소스는 세 가지 범주로 나뉩니다.
 
-1. Design Sources folder is for synthesis/implementation sources
-2. Constraints folder is for timing constraints (XDC)
-3. Simulation Sources folder is for simulation only sources
+1. 디자인 소스 폴더는 합성/구현 소스를 위한 폴더입니다.
+2. 컨스트레인트 폴더는 타이밍 컨스트레인트(XDC)를 위한 폴더입니다.
+3. 시뮬레이션 소스 폴더는 시뮬레이션 전용 소스입니다.
 
-Clicking on a particular file will provide information in the Properties tab (under Sources).  In properties tab, the developer can change how the file is used in the design flow.
+특정 파일을 클릭하면 속성 탭(소스 아래)에 정보가 표시됩니다.  속성 탭에서 개발자는 설계 흐름에서 파일이 사용되는 방식을 변경할 수 있습니다.
 
-For RTL/IP sources can be marked for synthesis/implementation/simulation or synthesis/implementation and/or simulation only.  XDCs can be marked for synthesis/implementation or synthesis only or implementation only.
+RTL/IP 소스의 경우 합성/구현/시뮬레이션 또는 합성/구현 및/또는 시뮬레이션 전용으로 표시할 수 있습니다.  XDC는 합성/구현 또는 합성 전용 또는 구현 전용으로 표시할 수 있습니다.
 
-The FPGA Developer AMI includes a test example.  To explore the source file properties further as described, add /home/centos/src/test/counter/Sources/hdl/counter.v by selecting clicking on the plus (+) and add design sources.
+FPGA 개발자 AMI에는 테스트 예제가 포함되어 있습니다.  설명된 대로 소스 파일 속성을 자세히 살펴보려면 더하기(+)를 클릭하여 /home/centos/src/test/counter/Sources/hdl/counter.v를 추가하고 설계 소스를 추가합니다.
 
 ### Sources:IP Sources
 
