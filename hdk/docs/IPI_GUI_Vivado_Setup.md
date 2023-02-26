@@ -46,41 +46,41 @@ init.tcl 또는 Vivado\_init.tcl에서 $HDK\_SHELL\_DIR 경로에 따라 다음 
 <a name="hlxinst_win"></a>
 # Windows Install
 
-Download, install, and configure the license for Vivado SDx 2017.4, 2018.2, 2018.3 or 2019.1 for Windows.  More information is provided at:
+Windows용 Vivado SDx 2017.4, 2018.2, 2018.3 또는 2019.1 라이선스를 다운로드, 설치 및 구성합니다.  자세한 정보는 다음에서 확인할 수 있습니다:
 
 [On-Premises Licensing Help](../../docs/on_premise_licensing_help.md)
 
-Clone the `https://github.com/aws/aws-fpga` repository either through Github Desktop or Download ZIP and extract to a new folder location on the Windows machine.  This is the install location.
+Github 데스크톱을 통해 `https://github.com/aws/aws-fpga` 리포지토리를 복제하거나 ZIP을 다운로드하여 Windows 컴퓨터의 새 폴더 위치에 압축을 풉니다.  이것이 설치 위치입니다.
 
-Launch Vivado and determine the path where vivado\_init.tcl or init.tcl is sourced which is found as an INFO message at the top of the Tcl Console.
+Vivado를 실행하고 Tcl 콘솔 상단에 INFO 메시지로 표시되는 vivado\_init.tcl 또는 init.tcl의 소스가 있는 경로를 확인합니다.
 
-Open vivado\_init.tcl or init.tcl in a text editor and add the following lines at the top of the file.  Note aws-fpga could have a slightly different name like aws-fpga-master.
+텍스트 편집기에서 vivado\_init.tcl 또는 init.tcl을 열고 파일 상단에 다음 줄을 추가합니다.  aws-fpga는 aws-fpga-master와 같이 약간 다른 이름을 가질 수 있습니다.
 
 `set AWSINSTALL "C:/<replace with install location>/aws-fpga"`
 
 `source $AWSINSTALL/hdk/common/shell_v04261818/hlx/hlx_setup.tcl`
 
-Copy these lines into the TCL console to ensure paths are correct.
+경로가 올바른지 확인하기 위해 이 줄을 TCL 콘솔에 복사합니다.
 
-An error message will occur either in the TCL console or in a tab about DDR4 models.  Source the following command which only needs to be run once after cloning the github repository.  Note aws-fpga could have a slightly different name like aws-fpga-master.
+TCL 콘솔 또는 DDR4 모델에 대한 탭에 오류 메시지가 표시됩니다.  다음 명령을 소스화하세요. 이 명령은 github 리포지토리를 복제한 후 한 번만 실행하면 됩니다.  aws-fpga는 aws-fpga-master와 같이 약간 다른 이름을 가질 수 있습니다.
 
 `source C:/<replace with install location>/aws-fpga/hdk/common/verif/scripts/hdk_initsh.tcl`
 
-Before installing the DDR4 models, another critical warning appeared dealing with the SH\_CL\_BB\_routed.dcp.  Download the DCP into the following install location from a web browser.  Note aws-fpga could have a slightly different name like aws-fpga-master.
+DDR4 모델을 설치하기 전에 SH\_CL\_BB\_routed.dcp와 관련된 또 다른 중요 경고가 나타났습니다.  웹 브라우저에서 다음 설치 위치로 DCP를 다운로드합니다.  aws-fpga는 aws-fpga-master와 같이 약간 다른 이름을 가질 수 있습니다.
 
 `https://s3.amazonaws.com/aws-fpga-hdk-resources/hdk/shell_v04261818/build/checkpoints/from_aws/SH_CL_BB_routed.dcp`
 
 `C:/<replace with install location>/aws-fpga/hdk/common/shell_v04261818/build/checkpoints/from_aws/`
 
-Download the following executable from a web browser to the following HLx directory.  Note aws-fpga could have a slightly different name like aws-fpga-master.
+웹 브라우저에서 다음 실행 파일을 다음 HLx 디렉터리에 다운로드합니다.  aws-fpga는 aws-fpga-master와 같이 약간 다른 이름을 가질 수 있습니다.
 
 `http://www.labtestproject.com/files/sha256sum/sha256sum.exe`
 
 `C:/<replace with install location>/aws-fpga/hdk/common/shell_v04261818/hlx/build/scripts`
 
-Close Vivado and launch Vivado, the HLx environment is now setup and will always be sourced and IP integrator features will be automatically loaded.
+Vivado를 닫고 Vivado를 실행하면 이제 HLx 환경이 설정되어 항상 소싱되고 IP 통합기 기능이 자동으로 로드됩니다.
 
-Amazon CLI for Windows can be used for access to S3 to upload .tar and ingestion flow.
+Windows용 Amazon CLI를 사용하여 S3에 액세스하여 .tar 파일과 수집 흐름을 업로드할 수 있습니다.
 
 
 <a name="vivado"></a>
