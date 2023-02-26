@@ -256,8 +256,8 @@ cl\_pnr\_user.xdc - CL/SH 간의 타이밍 제약 조건.  필요한 경우 이 
 
 기본적으로 모든 구현 단계는 탐색 지시문을 사용합니다.
 
-구현 설정을 변경해야 하는 경우 Impl_1->실행 설정 변경...을 마우스 오른쪽 버튼으로 클릭하여 디자인 실행 설정 탭에서 도구 지시어만 변경합니다.
-opt_design, place_design, phys_opt_design, route_design에 대한 지시어만 변경합니다.  전략 옵션은 현재 HLx 환경의 특정 옵션을 재정의하므로 변경하지 마십시오.
+Implementation 설정을 변경해야 하는 경우 Impl_1 -> 실행 설정 변경... 을 마우스 오른쪽 버튼으로 클릭하여 디자인 실행 설정 탭에서 도구 지시어만 변경합니다.
+opt_design, place_design, phys_opt_design, route_design에 대한 지시어만 변경합니다. 전략 옵션은 현재 HLx 환경의 특정 옵션을 재정의하므로 변경하지 마십시오.
 
 시작하려면 [IPI 튜토리얼 및 예제](./IPI_GUI_Examples.md)를 참조하세요.
 
