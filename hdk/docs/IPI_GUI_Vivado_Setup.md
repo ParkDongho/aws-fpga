@@ -133,155 +133,155 @@ FPGA 개발자 AMI에는 테스트 예제가 포함되어 있습니다.  설명�
 
 ### Sources:IP Sources
 
-When IP has been created in your project, the "IP Sources" tab will be visible.  This tab will contain imported  IP sources and expanding the IP/Instantiation Template, developers can add the IP into the RTL.  Synthesis options on the IP should be global only.
+프로젝트에서 IP가 생성되면 "IP 소스" 탭이 표시됩니다.  이 탭에는 임포트한 IP 소스가 포함되며, 개발자는 IP/인스턴스화 템플릿을 확장하여 해당 IP를 RTL에 추가할 수 있습니다.  IP의 합성 옵션은 글로벌 옵션만 사용해야 합니다.
 
 ## Flow Navigator
 
-The Flow Navigator is in the green box and can be used to launch predefined design flow steps, such as synthesis and implementation.
+흐름 탐색기는 녹색 상자에 있으며 합성 및 구현과 같이 미리 정의된 디자인 흐름 단계를 시작하는 데 사용할 수 있습니다.
 
 ### PROJECT MANAGER
 
-PROJECT MANAGER section allows to Add Sources like RTL/IP/XDC sources, Language Templates for common RTL constructs/XDCs/DEBUG, and IP Catalog to add IPs to the project.  This portion of the flow targets the RTL flow.
+프로젝트 관리자 섹션에서는 RTL/IP/XDC 소스와 같은 소스 추가, 일반적인 RTL 구성/XDC/디버그용 언어 템플릿, 프로젝트에 IP를 추가할 수 있는 IP 카탈로그 등을 사용할 수 있습니다.  흐름의 이 부분은 RTL 흐름을 대상으로 합니다.
 
-When invoking IP Catalog, the developers can search for a particular IP or look through the different categories of IP and it’s the responsibility of the developer to add and connect the IP into the developer's RTL.
+IP 카탈로그를 호출할 때 개발자는 특정 IP를 검색하거나 다양한 범주의 IP를 살펴볼 수 있으며, 해당 IP를 개발자의 RTL에 추가하고 연결하는 것은 개발자의 책임입니다.
 
 
 ### IP INTEGRATOR
 
-This section allows the developer to open and modify the Block Design and the Generate Block Design after the design is validated.  The framework of the Block Design with the AWS IP and board are already created with the HLx flow so Create Block Design isn’t necessary.
+이 섹션에서는 개발자가 블록 디자인을 열고 수정할 수 있으며, 디자인이 검증되면 블록 디자인 생성도 가능합니다.  AWS IP 및 보드가 포함된 블록 디자인의 프레임워크는 HLx 플로우로 이미 생성되어 있으므로 블록 디자인 생성은 필요하지 않습니다.
 
-Double clicking on any IP in the BD brings up the Re-customize IP Dialog Box where IP settings can be reviewed or modified.  When connecting designs, Connection Automation is available to automatically connect interfaces.
+BD에서 IP를 더블 클릭하면 IP 설정을 검토하거나 수정할 수 있는 IP 재사용 대화 상자가 나타납니다.  설계를 연결할 때 연결 자동화를 사용하면 인터페이스를 자동으로 연결할 수 있습니다.
 
 ### SIMULATION
 
-This section allows the developer to change simulation settings by right clicking on SIMULATION and invoking simulations by clicking Run Simulation->Run Behavioral Simulation.
+이 섹션에서 개발자는 시뮬레이션을 마우스 오른쪽 버튼으로 클릭하고 시뮬레이션 실행->행동 시뮬레이션 실행을 클릭하여 시뮬레이션을 호출하여 시뮬레이션 설정을 변경할 수 있습니다.
 
 ### RTL ANALYSIS
 
-By clicking on Open Elaborate Design, the RTL files in the design are analyzed where the developer can check RTL structures and syntax before the synthesis stage.
+Open Elaborate Design을 클릭하면 설계의 RTL 파일이 분석되어 개발자가 합성 단계 전에 RTL 구조와 구문을 확인할 수 있습니다.
 
 ### SYNTHESIS
 
-By right clicking on SYNTHESIS, the developer is able to view Synthesis Settings and Launch Synthesis.  After synthesis stage is complete, clicking on Open Synthesized Design will open the post synthesis checkpoint for analysis.  This stage is necessary for developing timing constraints for the CL.
+개발자는 합성을 마우스 오른쪽 버튼으로 클릭하면 합성 설정 및 합성 시작을 볼 수 있습니다.  합성 단계가 완료된 후 합성된 디자인 열기를 클릭하면 분석을 위한 합성 후 체크포인트가 열립니다.  이 단계는 CL의 타이밍 제약 조건을 개발하는 데 필요합니다.
 
 ### IMPLEMENTATION
 
-By right clicking on IMPLEMENTATION, the developer is able to view Implementation Settings and Launch Implementation.  After implementation stage is complete, clicking on Open Implementation Design will open the post implementation checkpoint for analysis of the SH/CL.
+구현을 마우스 오른쪽 버튼으로 클릭하면 개발자는 구현 설정 및 구현 시작을 볼 수 있습니다.  구현 단계가 완료된 후 구현 디자인 열기를 클릭하면 SH/CL 분석을 위한 구현 후 체크포인트가 열립니다.
 
 ## TCL Commands
 
-The orange box is where TCL commands are entered.  The TCL Console Tab above the orange box reports the output of the TCL command.
+주황색 상자는 TCL 명령을 입력하는 곳입니다.  주황색 상자 위의 TCL 콘솔 탭은 TCL 명령의 출력을 보고합니다.
 
 ## Design Runs Tab
 
-The blue box is where the Design Runs are located with similar functionality as the Flow Navigator/SYNTHESIS and Flow Navigator/IMPLEMENTATION sections. The examples and tutorials mention how to use synth\_1 and impl\_1 to build the design.
+파란색 상자는 흐름 탐색기/합성 및 흐름 탐색기/구현 섹션과 유사한 기능을 가진 디자인 실행이 있는 곳입니다. 예제 및 튜토리얼에서는 synth\_1 및 impl\_1을 사용하여 디자인을 빌드하는 방법에 대해 설명합니다.
 
 
 <a name="projover"></a>
 # Vivado Flows Overview
 
-The Vivado HLx environment supports IP Integrator, RTL, HLS flows in Vivado and this section will discuss these
-flows from a top level. For more details about each flow take a look at [IPI_GUI_Flows](./IPI_GUI_Flows.md)
+Vivado HLx 환경은 Vivado에서 IP 통합기, RTL, HLS 플로우를 지원하며 이 섹션에서는 이러한 플로우를
+흐름에 대해 설명합니다. 각 플로우에 대한 자세한 내용은 [IPI_GUI_Flows](./IPI_GUI_Flows.md)를 참조하세요.
 
 
 ## IP + RTL flow
 
-Developers can add in IPs, existing AWS RTL from examples, new AWS template CL files from the AWS RTL flow and custom generated Verilog/System Verilog/VHDL files as source files.
+개발자는 IP, 예제에서 제공하는 기존 AWS RTL, AWS RTL 플로우에서 제공하는 새로운 AWS 템플릿 CL 파일, 사용자 지정 생성된 Verilog/System Verilog/VHDL 파일을 소스 파일로 추가할 수 있습니다.
 
-For using IPs, at this time global mode is only supported and Out of context (OOC) is not supported at this time.
+IP 사용의 경우 현재 글로벌 모드만 지원되며, OOC(Out of Context)는 현재 지원되지 않습니다.
 
 ![Diagram](./images/hlx/rtl_dram_dma_sources.jpg)
 
-Refer to the section [IPI_GUI_Flow_rtl_project_with_example_design](./IPI_GUI_Flows.md#rtl-project-with-example-design)
-for more details about RTL flow using example RTL design.
+예제 디자인을 사용한 RTL 흐름에 대한 자세한 내용은 [IPI_GUI_Flow_rtl_project_with_example_design](./IPI_GUI_Flows.md#rtl-project-with-example-design) 섹션을 참조하세요.
+를 참조하여 예제 RTL 디자인을 사용한 RTL 흐름에 대한 자세한 내용을 확인하세요.
 #### Eg:
-An example can be found at [IPI_RTL_example_flow](../../hdk/docs/IPI_GUI_Examples.md#rtlexistut_world).
+예제는 [IPI_RTL_example_flow](../../hdk/docs/IPI_GUI_Examples.md#rtlexistut_world)에서 찾을 수 있습니다.
 
 
-Refer to the section [IPI_GUI_Flow_rtl_project_with_example_design](./IPI_GUI_Flows.md#rtlnew)
-for more details about RTL flow using RTL design from scratch.
+자세한 내용은 [IPI_GUI_Flow_rtl_project_with_example_design](./IPI_GUI_Flows.md#rtlnew) 섹션을 참조하세요.
+섹션을 참조하여 RTL 디자인을 처음부터 사용하는 RTL 흐름에 대해 자세히 알아보세요.
 #### Eg:
-An example can be found at [IPI_RTL_scratch_flow](./IPI_GUI_Examples.md#rtlscrtut)
+예제는 [IPI_RTL_scratch_flow](./IPI_GUI_Exples.md#rtlscrtut)에서 확인할 수 있습니다.
 
 
 ## IP Integration flow
 
-Developers can add in Vivado IP into the block diagram to create/stitch a full design easily. RTL module referencing flow using developer RTL can be used to add custom IP to the block diagram. Both RTL and IP can be added as IP in this flow.
+개발자는 블록 다이어그램에 Vivado IP를 추가하여 전체 설계를 쉽게 생성/접합할 수 있습니다. 개발자 RTL을 사용하는 RTL 모듈 레퍼런스 플로우를 사용하여 블록 다이어그램에 커스텀 IP를 추가할 수 있습니다. 이 플로우에서는 RTL과 IP를 모두 IP로 추가할 수 있습니다.
 
 ![Diagram](./images/hlx/ipi_mod_ref.jpg)
 
-Refer to the section [IPI_GUI_flow](./IPI_GUI_Flows.md#ipiprojex) for more details about IPI GUI flow.
+IPI GUI 플로우에 대한 자세한 내용은 [IPI_GUI_flow](./IPI_GUI_Flows.md#ipiprojex) 섹션을 참조하세요.
 #### Eg:
-An example can be found at [IPI_Integrator_flow](../../hdk/docs/IPI_GUI_Examples.md#rtlex).
+예제는 [IPI_Integrator_flow](../../hdk/docs/IPI_GUI_Examples.md#rtlex)에서 확인할 수 있습니다.
 
 ## IP Integrator for HLS IP
 
-HLS is a C programming method in order to create RTL/IP for the FPGA Developers. Developers can add developed/generated HLS IPs in either RTL/IP Integrator flows using an IP Repository. In this flow only IPs are used to create examples.
+HLS는 FPGA 개발자를 위한 RTL/IP를 생성하기 위한 C 프로그래밍 방법입니다. 개발자는 IP 리포지토리를 사용하여 개발/생성된 HLS IP를 RTL/IP 통합기 플로우에 추가할 수 있습니다. 이 플로우에서는 예제 생성에 IP만 사용됩니다.
 
 ![Diagram](./images/hlx/ipi_hls.jpg)
 
 Eg:
 
-A link to the example will be added here in the future when we have HLS C example ready.
+향후 HLS C 예제가 준비되면 여기에 예제 링크가 추가될 예정입니다.
 
 ## General Environment
 
 ### Design Constraints in Project
 
-Timing analysis and setting timing constraints/floorplans is discussed in the timing closure documentation.
+타이밍 분석 및 타이밍 제약 조건/플로어플랜 설정은 타이밍 클로저 문서에서 설명합니다.
 
-The following top level clocks from the Shell (MMCM in the Shell to the CL) are generated dynamically based upon clock recipe’s used with the AWS flow.
-The developer can’t modify these constraints as they are dynamically created before synthesis.
+셸의 다음 최상위 클럭(셸에서 CL까지)은 AWS 흐름에 사용된 클럭 레시피에 따라 동적으로 생성됩니다.
+이러한 제약 조건은 합성 전에 동적으로 생성되므로 개발자가 수정할 수 없습니다.
 
-cl\_clocks\_aws.xdc – Top level clock constraints for the CL.
+cl\_clocks\_aws.xdc - CL에 대한 최상위 클럭 제약 조건입니다.
 
-The following .xdc file is only available with the RTL flow provided by the AWS env for synthesis.  This file should be disabled in the vivado project
-if DDR4 memories are not in the CL design(critical warnings could show up).
+다음 .xdc 파일은 합성을 위해 AWS 환경이 제공하는 RTL 흐름에서만 사용할 수 있습니다.  이 파일은 비바도 프로젝트에서 비활성화해야 합니다.
+에서 비활성화해야 합니다(중요 경고가 표시될 수 있음).
 
-cl\_synth\_aws.xdc - Timing constraints between sh_ddr module and DDR4 IP.
+cl\_synth\_aws.xdc - sh_ddr 모듈과 DDR4 IP 간의 타이밍 제약 조건.
 
-The following .xdc files are available to the developer.
+개발자는 다음 .xdc 파일을 사용할 수 있습니다.
 
-cl\_synth\_user.xdc – Timing constraints in the CL(I.E creating new clock structures with clock generator/using clocks in different Shell MMCM).
+cl\_synth\_user.xdc - CL의 타이밍 제약 조건(예: 클럭 제너레이터로 새 클럭 구조 생성/다른 셸 MMCM에서 클럭 사용).
 
-cl\_pnr\_user.xdc – Timing constraints between the CL/SH.  Floorplanning is done in this xdc if necessary.
+cl\_pnr\_user.xdc - CL/SH 간의 타이밍 제약 조건.  필요한 경우 이 xdc에서 플로어 플래닝이 수행됩니다.
 
 
 
 ### Synthesis/Implementation
 
-Timing analysis and setting appropriate synthesis settings/implementation directives are discussed in the timing closure documentation.
+타이밍 분석과 적절한 합성 설정/구현 지시어 설정은 타이밍 클로저 문서에 설명되어 있습니다.
 
-By default, synthesis is using Default directive and -max\_uram\_cascade\_height is set to 1. The developer can set max\_uram\_cascade\_height in the More Options section of Design Run Settings Tab by right clicking on Synth\_1->Open Run.
+기본적으로 합성은 Default 지시문을 사용하며 -max\_uram\_cascade\_height는 1로 설정되어 있습니다. 개발자는 Synth\_1->Open Run을 마우스 오른쪽 버튼으로 클릭하여 디자인 실행 설정 탭의 추가 옵션 섹션에서 max\_uram\_cascade\_height를 설정할 수 있습니다.
 
-By default, all implementation steps are using the Explore directive.
+기본적으로 모든 구현 단계는 탐색 지시문을 사용합니다.
 
-If needing to change implementation settings, only change the tool directives in the Design Run Settings tab by right clicking on Impl_1->Change Run Settings… .
-Change only directives for opt_design ,place_design, phys_opt_design, and route_design.  Do not change Strategy options as this overrides certain options in the HLx environment at this time.
+구현 설정을 변경해야 하는 경우 Impl_1->실행 설정 변경...을 마우스 오른쪽 버튼으로 클릭하여 디자인 실행 설정 탭에서 도구 지시어만 변경합니다.
+opt_design, place_design, phys_opt_design, route_design에 대한 지시어만 변경합니다.  전략 옵션은 현재 HLx 환경의 특정 옵션을 재정의하므로 변경하지 마십시오.
 
-Refer to [IPI Tutorials and Examples](./IPI_GUI_Examples.md) to get started.
+시작하려면 [IPI 튜토리얼 및 예제](./IPI_GUI_Examples.md)를 참조하세요.
 
 ### HLx button (optional)
 
-The HLx button is a custom command that can be added to Vivado toolbar for ease of use. Here is an example: [Vivado IP Integrator video](https://www.xilinx.com/video/hardware/using-vivado-ip-integrator-and-amazon-f1.html)
+HLx 버튼은 사용하기 쉽도록 Vivado 도구 모음에 추가할 수 있는 사용자 지정 명령입니다. 다음은 예제입니다: [비바도 IP 통합기 동영상](https://www.xilinx.com/video/hardware/using-vivado-ip-integrator-and-amazon-f1.html)
 
-To add it to Vivado toolbar, please follow the steps once VIvado GUI is opened:
+비바도 툴바에 추가하려면 비바도 GUI가 열리면 다음 단계를 따르세요:
 - Go to Tools -> Custom Commands -> Customize Commands...
 
 ![HLx_step_1](./images/hlx/HLx_button_step_1.jpg)
-- Click on the "+" icon
-- Enter a name (e.g. AWS_Make_IPI) and press Enter
-- Configure the window as follow
+- "+" 아이콘을 클릭합니다.
+- 이름(예: AWS_Make_IPI)을 입력하고 Enter 키를 누릅니다.
+- 다음과 같이 창을 구성합니다.
 
 ![HLx_step_2](./images/hlx/HLx_button_step_2.jpg)
-- Finally, press OK
+- 마지막으로 OK를 누릅니다.
 
-You can now use the HLx button.
+이제 HLx 버튼을 사용할 수 있습니다.
 
 <a name="summary"></a>
 # Summary
 
-Now that you are familar with building an [customer examples](../README.md) on F1 (AFI) and running on F1 using the CLI/TCL method; this guide has helped you setup Vivado for IP Integrator, please move to the [IP Integrator Tutorials and Examples](./IPI_GUI_Examples.md).  This documentation will help you get started on example designs, new designs, and additional tutorials.
+이제 F1(AFI)에서 [고객 예제](../README.md)를 빌드하고 CLI/TCL 방법을 사용하여 F1에서 실행하는 데 익숙해졌으므로 이 가이드가 IP 통합기용 Vivado 설정에 도움이 되었으므로 [IP 통합기 튜토리얼 및 예제](./IPI_GUI_Exples.md)로 이동하십시오.  이 문서는 예제 디자인, 새로운 디자인 및 추가 튜토리얼을 시작하는 데 도움이 될 것입니다.
 
 
 
